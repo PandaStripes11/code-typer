@@ -1,6 +1,8 @@
 import TypingInputStyles from './TypingInput.module.css'
 
 export default function TypingInput(props) {
+
+
     return (
         <div className={TypingInputStyles.div}>
             <form className={TypingInputStyles.form}>
@@ -12,7 +14,9 @@ export default function TypingInput(props) {
                     value={props.value}
                 />
             </form>
-            <button className={TypingInputStyles.button}>Redo</button>
+            <button 
+                className={TypingInputStyles.button}
+            >Redo</button>
         </div>
     )
 }
