@@ -17,9 +17,35 @@
     outline: none;
     flex-shrink: 4;
     background: linear-gradient(cornflowerblue, cornflowerblue) bottom / 0% 2px no-repeat rgb(235, 235, 235);
-    transition: all 1s ease-out;
+    transition: background-size 1s ease-out;
+}
+.inputCorrect {
+    border: none;
+    width: 100%;
+    padding: 5px;
+    border-radius: 2px;
+    outline: none;
+    flex-shrink: 4;
+    background: linear-gradient(cornflowerblue, cornflowerblue) bottom / 0% 2px no-repeat rgba(144, 238, 144, 0.5);
+    transition: background-size 1s ease-out;
+}
+.inputWrong {
+    border: none;
+    width: 100%;
+    padding: 5px;
+    border-radius: 2px;
+    outline: none;
+    flex-shrink: 4;
+    background: linear-gradient(cornflowerblue, cornflowerblue) bottom / 0% 2px no-repeat rgba(255, 99, 71, 0.5);
+    transition: background-size 1s ease-out;
 }
 .input:focus {
+    background-size: 100% 2px;
+}
+.inputCorrect:focus {
+    background-size: 100% 2px;
+}
+.inputWrong:focus {
     background-size: 100% 2px;
 }
 .button {
