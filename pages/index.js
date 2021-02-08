@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import TypingBox from '../components/TypingBox/TypingBox'
+import Credits from '../components/Credits/Credits'
 
 export default function App() {
     return (
@@ -11,6 +12,7 @@ export default function App() {
             </Head>
             <h1>Code Typer</h1>
             <TypingBox />
+            <Credits />
         </>
     )
 }
