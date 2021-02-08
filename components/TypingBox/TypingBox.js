@@ -15,6 +15,7 @@ export default function TypingBox() {
     const [acc, setAcc] = useState(0)
     const [intervalId, setIntervalId] = useState()
     const [timer, setTimer] = useState(0)
+    const [placeholder, setPlaceholder] = useState('Type the words here')
     const [passageText, setPassageText] = useState('some word little hand people like problem house without do house move end part back do because would the more time some this high new a other change play from before because it about show around most world around one good by order eye because under way many know own')
 
     const words = passageText.split(' ')
@@ -66,6 +67,7 @@ export default function TypingBox() {
         if (currentWord === 0 && text === '') {
             const currId = changeUpdater()
             setIntervalId(currId)
+            setPlaceholder('')
         }
 
         const {value} = target
@@ -122,6 +124,7 @@ export default function TypingBox() {
         setWpm(0)
         setUpdater(0)
         setTimer(0)
+        setPlaceholder('Type the words here')
     }
 
     return (
@@ -130,17 +133,20 @@ export default function TypingBox() {
                 wpm={wpm}
                 acc={acc}
             />
-            <Passage 
-                passage={passageText}
-                currentWord={currentWord}
-                correctWords={correctWords}
-            />
-            <TypingInput 
-                value={text} 
-                onChange={handleChange}
-                correct={correct}
-                handleClick={handleClick}
-            />
+            <div className={TypingBoxStyles.typingBox}>
+                <Passage 
+                    passage={passageText}
+                    currentWord={currentWord}
+                    correctWords={correctWords}
+                />
+                <TypingInput 
+                    value={text} 
+                    onChange={handleChange}
+                    correct={correct}
+                    handleClick={handleClick}
+                    placeholder={placeholder}
+                />
+            </div>
         </main>
     )
 }

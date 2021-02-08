@@ -11,6 +11,7 @@
 # next.js
 /.next/
 /out/
+NextJsGuide.md
 
 # production
 /build

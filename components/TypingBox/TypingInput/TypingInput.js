@@ -13,7 +13,7 @@ export default function TypingInput(props) {
                         )
                     }
                     type="text"
-                    placeholder="Type the words here"
+                    placeholder={props.placeholder}
                     onChange={props.onChange}
                     value={props.value}
                 />
