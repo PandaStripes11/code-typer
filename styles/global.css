@@ -20,25 +20,25 @@ body {
 /* Default Typography */
 /**********************/
 h1 { 
-    font-size: 2.2em; 
+    font-size: 2.4em; 
     text-align: center;
-    margin-top: 15vh;
 } 
      
 h2 { 
-    font-size: 2.0em;     
+    font-size: 2em;     
 } 
      
 h3 { 
-    font-size: 1.8em; 
+    font-size: 1.6em; 
+    font-weight: 500;
 } 
      
 h4 { 
-    font-size: 1.6em;     
+    font-size: 1.2em;     
 } 
      
 h5 { 
-    font-size: 1.4em;     
+    font-size: 0.8em;     
 } 
      
 p { 
