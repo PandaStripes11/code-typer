@@ -9,6 +9,7 @@ export default function App() {
                 <meta name="description" content="Improve your typing speed with this fun, fast, and efficient typing page."/>
                 <title>Code Typer</title>
             </Head>
+            <h1>Code Typer</h1>
             <TypingBox />
         </>
     )

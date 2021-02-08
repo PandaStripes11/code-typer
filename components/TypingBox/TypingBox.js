@@ -60,7 +60,6 @@ export default function TypingBox() {
 
     return (
         <main className={TypingBoxStyles.main}>
-            <h1 className={TypingBoxStyles.h1}>Code Typer</h1>
             <Passage 
                 passage={passageText}
                 currentWord={currentWord}
