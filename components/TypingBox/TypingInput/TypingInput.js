@@ -1,3 +1,4 @@
+import {useEffect} from 'react'
 import TypingInputStyles from './TypingInput.module.css'
 
 export default function TypingInput(props) {
@@ -19,6 +20,7 @@ export default function TypingInput(props) {
             </form>
             <button 
                 className={TypingInputStyles.button}
+                onClick={props.handleClick}
             >Redo</button>
         </div>
     )

@@ -11,7 +11,12 @@ export default function Passage(props) {
                 } else if (index > props.currentWord) {
                     return <span key={element + index}> {element}</span>
                 } else {
-                    return <span key={element + index}>{element} </span>
+                    if (props.correctWords[index]) {
+                        return <span className={PassageStyles.correct} key={element + index}>{element} </span>
+                    } else {
+                        return <span className={PassageStyles.wrong} key={element + index}> {element} </span>
+                    }
+                    
                 }
             })}</p>
         </div>
