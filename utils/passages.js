@@ -43,7 +43,20 @@ const passageWords = [
     'child',
     'karen',
     'video',
-    'games'
+    'games',
+    'medicine',
+    'violence',
+    'anger',
+    'happiness',
+    'sadness',
+    'joy',
+    'Christmas',
+    'Easter',
+    'eggs',
+    'Christianity',
+    'Catholicism',
+    'crucifix',
+    'sacrifice'
 ]
 const sentences = [
     'How does it feel to have completed our typing tutorial?',
