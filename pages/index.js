@@ -7,6 +7,11 @@ import {useState} from 'react'
 
 export default function App() {
     const [customize, setCustomize] = useState(false)
+    const [passageDetails, setPassageDetails] = useState({
+        type: 'words',
+        symbols: [],
+        number: 50
+    })
 
     return (
         <>
@@ -16,8 +21,16 @@ export default function App() {
                 <title>Code Typer</title>
             </Head>
             <h1>Code Typer</h1>
-            <TypingBox setCustomizeDisplay={setCustomize}/>
-            <CustomizeDisplay display={customize} setCustomizeDisplay={setCustomize}/>
+            <TypingBox 
+                setCustomizeDisplay={setCustomize}
+                passageDetails={passageDetails}
+            />
+            <CustomizeDisplay
+                display={customize} 
+                setCustomizeDisplay={setCustomize}
+                setPassageDetails={setPassageDetails}
+                passageDetails={passageDetails}
+            />
             <Credits />
         </>
     )

@@ -11,7 +11,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Poppins, sans-serif;
 }
 .sectionInactive {
     display: none;
@@ -28,4 +27,25 @@
 .title {
     text-align: center;
     font-weight: 600;
+}
+
+.submitContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+input[type="submit"].submit {
+    position: relative;
+    font-size: 1.2em;
+    font-weight: 600;
+    justify-self: center;
+    background: lightgreen;
+    padding: 10px 15px;
+    border-radius: 50px;
+    border-bottom: 4px solid mediumseagreen;
+    transition: all 0.2s ease;
+}
+input[type="submit"].submit:focus {
+    top: 5px;
+    background-size: inherit;
 }

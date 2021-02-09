@@ -61,13 +61,13 @@
 }
 .button:hover {
     box-shadow: 0px 2px 0px 0px rgba(75, 75, 75, 0.6);
-    background: none;
+    background: white;
     color: rgba(20, 20, 20, 0.6);
     text-shadow: none;
     border: 2px solid gray;
 }
 .button:active {
-    background: none;
+    background: white;
     color: rgba(20, 20, 20, 0.6);
     text-shadow: none;
     border: 2px solid gray;

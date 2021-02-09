@@ -5,7 +5,7 @@ import Passage from './Passage/Passage.js'
 import TypingInput from './TypingInput/TypingInput.js'
 
 import TypingBoxStyles from './TypingBox.module.css'
-import { loadGetInitialProps } from 'next/dist/next-server/lib/utils'
+import {passageWords, sentences, paragraphs} from '../../utils/passages'
 
 export default function TypingBox(props) {
     const [text, setText] = useState('') 
@@ -61,6 +61,24 @@ export default function TypingBox(props) {
             })
         }, 100)
         return intervalId
+    }
+
+    function generatePassage() {
+        let myPassage = []
+        let arrayToUse
+        if (props.passageDetails.type === 'words') {
+            arrayToUse = passageWords
+        } else if (props.passageDetails.type === 'sentences') {
+            arrayToUse = sentences
+        } else if (props.passageDetails.type === 'paragraphs') {
+            arrayToUse = paragraphs
+        }
+        for (let i = 0; i < props.passageDetails.number; i++) {
+            myPassage.push(
+                arrayToUse[Math.floor(Math.random() * arrayToUse.length)]
+            )
+        }
+        setPassageText(myPassage.join(' '))
     }
 
     const handleChange = ({target}) => {
@@ -126,6 +144,7 @@ export default function TypingBox(props) {
         setUpdater(0)
         setTimer(0)
         setPlaceholder('Type the words here')
+        generatePassage()
     }
 
     return (
