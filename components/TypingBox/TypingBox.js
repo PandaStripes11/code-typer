@@ -5,8 +5,9 @@ import Passage from './Passage/Passage.js'
 import TypingInput from './TypingInput/TypingInput.js'
 
 import TypingBoxStyles from './TypingBox.module.css'
+import { loadGetInitialProps } from 'next/dist/next-server/lib/utils'
 
-export default function TypingBox() {
+export default function TypingBox(props) {
     const [text, setText] = useState('') 
     const [updater, setUpdater] = useState(0)
     const [currentWord, setCurrentWord] = useState(0)
@@ -132,6 +133,7 @@ export default function TypingBox() {
             <StatsDisplay 
                 wpm={wpm}
                 acc={acc}
+                setCustomizeDisplay={props.setCustomizeDisplay}
             />
             <div className={TypingBoxStyles.typingBox}>
                 <Passage 

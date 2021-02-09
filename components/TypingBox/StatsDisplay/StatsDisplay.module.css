@@ -3,3 +3,14 @@
     display: flex;
     justify-content: space-between;
 }
+
+.button {
+    outline: none;
+    background: none;
+    border: none;
+}
+.button:hover {
+    color: rgba(20, 20, 20, 0.6);
+    text-decoration: underline;
+    cursor: pointer;
+}
