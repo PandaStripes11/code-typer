@@ -98,13 +98,24 @@ export default function TypingBox(props) {
             clearInterval(intervalId)
             return
         } else if (currentWord === words.length - 1) {
-            clearInterval(intervalId)
             if (target.value === words[currentWord]) {
+                setCorrectWords(prev => {
+                    const newWords = prev.map((elem, index) => {
+                        if (index === currentWord) {
+                            return true
+                        } else {
+                            return elem
+                        }
+                    })
+                    return newWords
+                })
                 setCorrect(true)
+                clearInterval(intervalId)
+                return
             } else if (target.value.endsWith(' ') && target.value !== words[currentWord]) {
+                clearInterval(intervalId)
                 setCorrect(false)
             }
-            return
         }
 
         // Default
