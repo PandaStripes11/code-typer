@@ -17,6 +17,7 @@ export default function TypingBox(props) {
     const [intervalId, setIntervalId] = useState()
     const [timer, setTimer] = useState(0)
     const [placeholder, setPlaceholder] = useState('Type the words here')
+    
     const [passageText, setPassageText] = useState('some word little hand people like problem house without do house move end part back do because would the more time some this high new a other change play from before because it about show around most world around one good by order eye because under way many know own')
 
     const words = passageText.split(' ')
@@ -82,16 +83,17 @@ export default function TypingBox(props) {
     }
 
     const handleChange = ({target}) => {
-    
+        const {value} = target
+        setText(value)
+
+        //Begin
         if (currentWord === 0 && text === '') {
             const currId = changeUpdater()
             setIntervalId(currId)
             setPlaceholder('')
         }
 
-        const {value} = target
-        setText(value)
-
+        //End
         if (currentWord === words.length) {
             clearInterval(intervalId)
             return
@@ -105,6 +107,7 @@ export default function TypingBox(props) {
             return
         }
 
+        // Default
         const word = words[currentWord]
         if (value === word.substring(0, value.length) && value != '') {
             setCorrect(true)
@@ -112,6 +115,7 @@ export default function TypingBox(props) {
             setCorrect(false)
         }
 
+        // Space
         if (value.endsWith(' ')) {
             setCurrentWord(prev => prev + 1)
             setCorrectWords((prev) => {

@@ -1,11 +1,14 @@
-import {useEffect} from 'react'
 import TypingInputStyles from './TypingInput.module.css'
 
 export default function TypingInput(props) {
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        return false
+    }
 
     return (
         <div className={TypingInputStyles.div}>
-            <form className={TypingInputStyles.form}>
+            <form className={TypingInputStyles.form} onSubmit={handleSubmit}>
                 <input 
                     className={
                         props.correct ? TypingInputStyles.inputCorrect : (

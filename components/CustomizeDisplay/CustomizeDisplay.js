@@ -42,6 +42,11 @@ export default function CustomizeDisplay(props) {
         e.preventDefault()
     }
 
+    let maxValue = 1000
+    if (props.passageDetails.type === 'paragraphs') {
+        maxValue = 100
+    }
+
     return (
         <section 
             className={
@@ -58,7 +63,7 @@ export default function CustomizeDisplay(props) {
                         <option value="paragraphs">Paragraphs</option>
                     </select><br /><br />
                     <label htmlFor="number">Number of {props.passageDetails.type}</label><br/>
-                    <input id="number" type="number" name="number" value={props.passageDetails.number} onChange={handleChange}/><br /><br />
+                    <input id="number" type="number" min="2" max={maxValue} name="number" value={props.passageDetails.number} onChange={handleChange}/><br /><br />
                     <h4>Symbols</h4>
                     <input type="checkbox" id="quotes" name="quotes" value="quotes" onChange={handleChange}/>
                     <label htmlFor="quotes"> Quotes ""</label><br/>

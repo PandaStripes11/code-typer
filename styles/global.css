@@ -46,7 +46,7 @@ p {
     font-size: 1.2em;     
 }
 
-input[type="text"], input[type="number"], input[type="submit"], select {
+input, select {
     font-size: 1em;
     border: none;
     padding: 5px;
@@ -62,4 +62,15 @@ input:focus, select:focus {
 button {
     font-size: 1.2em;  
     font-weight: 700;
+}
+
+@media only screen and (max-width: 1000px) {
+    html {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    html {
+        font-size: 12px;
+    }
 }

@@ -9,43 +9,52 @@
 .form {
     width: 80%;
 }
-.input {
+input[type="text"].input {
+    font-size: 1.2em;
     border: none;
     width: 100%;
     padding: 5px;
     border-radius: 2px;
     outline: none;
     flex-shrink: 4;
-    background: linear-gradient(cornflowerblue, cornflowerblue) bottom / 0% 2px no-repeat rgb(235, 235, 235);
+    background: 
+        linear-gradient(cornflowerblue, cornflowerblue) bottom / 0% 2px no-repeat 
+        rgb(235, 235, 235);
     transition: background-size 1s ease-out;
 }
-.inputCorrect {
+input[type="text"].inputCorrect {
+    font-size: 1.2em;
     border: none;
     width: 100%;
     padding: 5px;
     border-radius: 2px;
     outline: none;
     flex-shrink: 4;
-    background: linear-gradient(cornflowerblue, cornflowerblue) bottom / 0% 2px no-repeat rgba(144, 238, 144, 0.5);
+    background: 
+        linear-gradient(cornflowerblue, cornflowerblue) bottom / 0% 2px no-repeat 
+        rgba(144, 238, 144, 0.5); 
     transition: background-size 1s ease-out;
 }
-.inputWrong {
+input[type="text"].inputWrong {
+    font-size: 1.2em;
     border: none;
     width: 100%;
     padding: 5px;
     border-radius: 2px;
     outline: none;
     flex-shrink: 4;
-    background: linear-gradient(cornflowerblue, cornflowerblue) bottom / 0% 2px no-repeat rgba(255, 99, 71, 0.5);
+    background: 
+        linear-gradient(cornflowerblue, cornflowerblue) bottom / 0% 2px no-repeat 
+        rgba(255, 99, 71, 0.5);
     transition: background-size 1s ease-out;
 }
-.input:focus {
+input[type="text"].input:focus {
     background-size: 100% 2px;
 }
-.inputCorrect:focus {
+input[type="text"].inputCorrect:focus {
     background-size: 100% 2px;
 }
-.inputWrong:focus {
+input[type="text"].inputWrong:focus {
     background-size: 100% 2px;
 }
 .button {
