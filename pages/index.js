@@ -18,9 +18,9 @@ export default function App() {
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="description" content="Improve your typing speed with this fun, fast, and efficient typing page."/>
-                <title>Code Typer</title>
+                <title>Type Master</title>
             </Head>
-            <h1>Code Typer</h1>
+            <h1>Type Master</h1>
             <TypingBox 
                 setCustomizeDisplay={setCustomize}
                 passageDetails={passageDetails}

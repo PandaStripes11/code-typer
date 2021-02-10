@@ -50,12 +50,7 @@ const passageWords = [
     'happiness',
     'sadness',
     'joy',
-    'Christmas',
-    'Easter',
     'eggs',
-    'Christianity',
-    'Catholicism',
-    'crucifix',
     'sacrifice'
 ]
 const sentences = [
@@ -63,7 +58,7 @@ const sentences = [
     'Does anyone know where the rice is?',
     'I like to eat bananas.',
     'Zacharius went out one day to play games with deSean',
-    'I need food',
+    'I need food.',
     'Would you consider yourself a healthy individual?',
 ]
 const paragraphs = [
