@@ -94,7 +94,7 @@ export default function TypingBox(props) {
         }
 
         //End
-        if (currentWord === words.length) {
+        if (currentWord >= words.length) {
             clearInterval(intervalId)
             return
         } else if (currentWord === words.length - 1) {
@@ -111,9 +111,16 @@ export default function TypingBox(props) {
                 })
                 setCorrect(true)
                 clearInterval(intervalId)
+                console.log(wpm, acc, words.length)
+                props.setCbucks(
+                    props.cbucks + Math.round((Math.round(wpm + acc) * words.length) / 100)
+                )
                 return
-            } else if (target.value.endsWith(' ') && target.value !== words[currentWord]) {
+            } else if (target.value.endsWith(' ') && (target.value !== words[currentWord] && target.value !== words[currentWord] + ' ')) {
                 clearInterval(intervalId)
+                props.setCbucks(
+                    props.cbucks + Math.round(Math.round(wpm + acc) * words.length)
+                )
                 setCorrect(false)
             }
         }
@@ -125,6 +132,12 @@ export default function TypingBox(props) {
         } else {
             setCorrect(false)
         }
+
+        /*
+        if (value.startsWith(' ')) {
+            return
+        }
+        */
 
         // Space
         if (value.endsWith(' ')) {
