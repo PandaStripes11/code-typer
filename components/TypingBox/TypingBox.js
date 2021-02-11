@@ -113,7 +113,7 @@ export default function TypingBox(props) {
                 setCorrect(true)
                 clearInterval(intervalId)
                 props.setCbucks(
-                    props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 100 + 1)) * words.length) / 100)
+                    props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 50 + 1)) * words.length) / 100)
                 )
                 return
             } else if (target.value.endsWith(' ') && (target.value !== words[currentWord] && target.value !== words[currentWord] + ' ')) {
@@ -131,7 +131,7 @@ export default function TypingBox(props) {
                 setCurrentWord(prev => prev + 1)
                 clearInterval(intervalId)
                 props.setCbucks(
-                    props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 100 + 1)) * words.length) / 100)
+                    props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 50 + 1)) * words.length) / 100)
                 )
                 setCorrect(false)
                 return

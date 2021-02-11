@@ -9,9 +9,14 @@
     color: white;
 }
 
+.p {
+    font-size: 1em;
+}
+
 .a {
     text-decoration: none;
     color: lightblue;
+    font-size: 1em;
 }
 .a:hover {
     text-decoration: underline;
