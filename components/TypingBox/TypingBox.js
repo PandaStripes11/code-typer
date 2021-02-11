@@ -111,17 +111,27 @@ export default function TypingBox(props) {
                 })
                 setCorrect(true)
                 clearInterval(intervalId)
-                console.log(wpm, acc, words.length)
                 props.setCbucks(
-                    props.cbucks + Math.round((Math.round(wpm + acc) * words.length) / 100)
+                    props.cbucks + Math.round(Math.round((parseFloat(wpm) + acc) * words.length) / 100)
                 )
                 return
             } else if (target.value.endsWith(' ') && (target.value !== words[currentWord] && target.value !== words[currentWord] + ' ')) {
+                setCorrectWords(prev => {
+                    const newWords = prev.map((elem, index) => {
+                        if (index === currentWord) {
+                            return false
+                        } else {
+                            return elem
+                        }
+                    })
+                    return newWords
+                })
                 clearInterval(intervalId)
                 props.setCbucks(
-                    props.cbucks + Math.round(Math.round(wpm + acc) * words.length)
+                    props.cbucks + Math.round(Math.round(parseFloat(wpm) + acc) * words.length)
                 )
                 setCorrect(false)
+                return
             }
         }
 
@@ -133,11 +143,11 @@ export default function TypingBox(props) {
             setCorrect(false)
         }
 
-        /*
-        if (value.startsWith(' ')) {
+        
+        if (value.startsWith(' ') && currentWord > 2) {
             return
         }
-        */
+        
 
         // Space
         if (value.endsWith(' ')) {
