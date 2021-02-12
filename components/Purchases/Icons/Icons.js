@@ -11,12 +11,11 @@ export default function Icons(props) {
 
     return (
         <aside>
-            <button onClick={handleShopClick}>
+            <button className="store" onClick={handleShopClick}>
                 <Image 
                     src="/shopping-cart.png"
                     width={30}
                     height={30}
-                    className="store"
                 />
                 &nbsp;Store
             </button>
@@ -25,7 +24,6 @@ export default function Icons(props) {
                     src="/battle-pass.png"
                     width={30}
                     height={30}
-                    className="battle-pass"
                 />
                 &nbsp;Battle Pass
             </button>

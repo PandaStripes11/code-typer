@@ -112,6 +112,19 @@ export default function TypingBox(props) {
                 setCurrentWord(prev => prev + 1)
                 setCorrect(true)
                 clearInterval(intervalId)
+                if (acc < 25) {
+                    if (props.cbucks < 100) {
+                        props.setCbucks(0)
+                    } else {
+                        props.setCbucks(
+                            props.cbucks - 100
+                        )
+                    }
+                    return
+                }
+                if (acc < 60) {
+                    return
+                }
                 props.setCbucks(
                     props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * words.length) / 100)
                 )
@@ -130,6 +143,19 @@ export default function TypingBox(props) {
                 })
                 setCurrentWord(prev => prev + 1)
                 clearInterval(intervalId)
+                if (acc < 25) {
+                    if (props.cbucks < 100) {
+                        props.setCbucks(0)
+                    } else {
+                        props.setCbucks(
+                            props.cbucks - 100
+                        )
+                    }
+                    return
+                }
+                if (acc < 60) {
+                    return
+                }
                 props.setCbucks(
                     props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * words.length) / 100)
                 )
