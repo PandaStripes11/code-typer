@@ -6,7 +6,7 @@ export default function Icons(props) {
     }
 
     const handleBattlePassClick = () => {
-        props.setDisplayBattlePass(!props.setDisplayBattlePass)
+        props.setDisplayBattlePass(!props.displayBattlePass)
     }
 
     return (
