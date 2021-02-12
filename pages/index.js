@@ -3,7 +3,7 @@ import TypingBox from '../components/TypingBox/TypingBox'
 import Credits from '../components/Credits/Credits'
 import CustomizeDisplay from '../components/CustomizeDisplay/CustomizeDisplay'
 import Header from '../components/Header/Header'
-//import Purchases from '../components/Purchases/Purchases.'
+import Purchases from '../components/Purchases/Purchases'
 
 import {useState} from 'react'
 
@@ -27,10 +27,10 @@ export default function App() {
             <Header 
                 cbucks={cbucks}
             />
-            {/*<Purchases 
+            <Purchases 
                 cbucks={cbucks}
                 setCbucks={setCbucks}
-            />*/}
+            />
             <h1>Type Master</h1>
             <TypingBox 
                 setCustomizeDisplay={setCustomize}
