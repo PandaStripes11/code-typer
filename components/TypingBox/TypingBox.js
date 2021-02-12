@@ -126,7 +126,7 @@ export default function TypingBox(props) {
                     return
                 }
                 props.setCbucks(
-                    props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * words.length) / 100)
+                    props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25)) / 15)
                 )
                 return
             } else if (target.value.endsWith(' ') && (target.value !== words[currentWord] && target.value !== words[currentWord] + ' ')) {
@@ -157,7 +157,7 @@ export default function TypingBox(props) {
                     return
                 }
                 props.setCbucks(
-                    props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * words.length) / 100)
+                    props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25)) / 100)
                 )
                 setCorrect(false)
                 return
