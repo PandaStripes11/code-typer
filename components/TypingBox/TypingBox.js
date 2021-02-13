@@ -126,9 +126,12 @@ export default function TypingBox(props) {
                     return
                 }
                 props.setDisplayAnimation(true)
-                props.setCbucks(
-                    props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25)) / 15)
-                )
+                setTimeout(() => {
+                    props.setCbucks(
+                        props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25)) / 15)
+                    )
+                }, 1600)
+                
                 return
             } else if (target.value.endsWith(' ') && (target.value !== words[currentWord] && target.value !== words[currentWord] + ' ')) {
                 setCorrectWords(prev => {
@@ -158,9 +161,11 @@ export default function TypingBox(props) {
                     return
                 }
                 props.setDisplayAnimation(true)
-                props.setCbucks(
-                    props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25)) / 100)
-                )
+                setTimeout(() => {
+                    props.setCbucks(
+                        props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25)) / 15)
+                    )
+                }, 1600)
                 setCorrect(false)
                 return
             }
