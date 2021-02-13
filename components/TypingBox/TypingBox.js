@@ -125,6 +125,7 @@ export default function TypingBox(props) {
                 if (acc < 60) {
                     return
                 }
+                props.setDisplayAnimation(true)
                 props.setCbucks(
                     props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25)) / 15)
                 )
@@ -156,6 +157,7 @@ export default function TypingBox(props) {
                 if (acc < 60) {
                     return
                 }
+                props.setDisplayAnimation(true)
                 props.setCbucks(
                     props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25)) / 100)
                 )

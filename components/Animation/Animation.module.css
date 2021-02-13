@@ -1,0 +1,29 @@
+.imageContainer {
+    position: fixed;
+    top: 50vh;
+    right: 50vw;
+    animation: move 1.5s ease-out 0s 1 normal forwards;
+    z-index: 10;
+    box-shadow: 3px 4px 6px 0px rgba(0, 0, 0, 0.6);
+    border-radius: 100%;
+    width: 65px;
+    height: 65px;
+    background-color: white;
+}
+
+@keyframes move {
+    0% {
+        top: 50vh;
+        right: 50vw;
+        opacity: 1;
+    } 20% {
+        top: 50vh;
+        right: 50vw;
+    } 50% {
+        opacity: 1;
+    } 100% {
+        top: 0;
+        right: 0;
+        opacity: 0;
+    }
+}
