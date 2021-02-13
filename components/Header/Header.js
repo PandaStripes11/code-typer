@@ -10,7 +10,15 @@ export default function Header(props) {
                 width={50}
                 alt="T-bucks"
             />
-            <h2 className={HeaderStyles.h2}>T-Bucks: {props.cbucks}</h2>
+            <h2 className={HeaderStyles.h2}>
+                {props.cbucks}
+                <Image
+                    src="/code-typer.png"
+                    height={25}
+                    width={25}
+                    alt="T-bucks"
+                />
+            </h2>
         </header>
     )
 }
