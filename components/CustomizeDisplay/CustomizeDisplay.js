@@ -65,13 +65,13 @@ export default function CustomizeDisplay(props) {
                     <label htmlFor="number">Number of {props.passageDetails.type}</label><br/>
                     <input id="number" type="number" min="2" max={maxValue} name="number" value={props.passageDetails.number} onChange={handleChange}/><br /><br />
                     <h4>Symbols</h4>
-                    <input type="checkbox" id="quotes" name="quotes" value="quotes" onChange={handleChange}/>
+                    <input type="checkbox" id="quotes" name="quotes" value='""' onChange={handleChange}/>
                     <label htmlFor="quotes"> Quotes ""</label><br/>
-                    <input type="checkbox" id="parentheses" name="parentheses" value="parentheses" onChange={handleChange}/>
+                    <input type="checkbox" id="parentheses" name="parentheses" value="()" onChange={handleChange}/>
                     <label htmlFor="parentheses"> Parentheses ()</label><br/>
-                    <input type="checkbox" id="brackets" name="brackets" value="brackets" onChange={handleChange}/>
+                    <input type="checkbox" id="brackets" name="brackets" value="[]" onChange={handleChange}/>
                     <label htmlFor="brackets"> Brackets []</label><br/>
-                    <input type="checkbox" id="braces" name="braces" value="braces" onChange={handleChange}/>
+                    <input type="checkbox" id="braces" name="braces" value="{}" onChange={handleChange}/>
                     <label htmlFor="braces"> Squiggly Braces {"{}"}</label><br/><br/>
                     <div className={CustomizeDisplayStyles.submitContainer}>
                         <input type="submit" className={CustomizeDisplayStyles.submit}/>

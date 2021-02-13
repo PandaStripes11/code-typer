@@ -75,9 +75,35 @@ export default function TypingBox(props) {
             arrayToUse = paragraphs
         }
         for (let i = 0; i < props.passageDetails.number; i++) {
-            myPassage.push(
-                arrayToUse[Math.floor(Math.random() * arrayToUse.length)]
-            )
+            console.log(myPassage, i)
+            if (props.passageDetails.symbols.length) {
+                let symbol;
+                let otherRandom;
+                const randomIndex = Math.floor(Math.random() * props.passageDetails.symbols.length)
+                const randomNumber = Math.random()
+                if (randomNumber > 0.7) {
+                    let symbolToUse = props.passageDetails.symbols[randomIndex]
+                    otherRandom = Math.floor(Math.random() * 2)
+                    symbol = symbolToUse.charAt(otherRandom)
+                } else {
+                    myPassage.push(
+                        arrayToUse[Math.floor(Math.random() * arrayToUse.length)]
+                    )
+                }
+                if (otherRandom === 0) {
+                    myPassage.push(
+                        `${symbol}${arrayToUse[Math.floor(Math.random() * arrayToUse.length)]}`
+                    )
+                } else if (otherRandom === 1) {
+                    myPassage.push(
+                        `${arrayToUse[Math.floor(Math.random() * arrayToUse.length)]}${symbol}`
+                    )
+                }
+            } else {
+                myPassage.push(
+                    arrayToUse[Math.floor(Math.random() * arrayToUse.length)]
+                )
+            }
         }
         setPassageText(myPassage.join(' '))
     }
@@ -128,7 +154,7 @@ export default function TypingBox(props) {
                 props.setDisplayAnimation(true)
                 setTimeout(() => {
                     props.setCbucks(
-                        props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25)) / 15)
+                        props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15)
                     )
                 }, 1600)
                 
@@ -163,7 +189,7 @@ export default function TypingBox(props) {
                 props.setDisplayAnimation(true)
                 setTimeout(() => {
                     props.setCbucks(
-                        props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25)) / 15)
+                        props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15)
                     )
                 }, 1600)
                 setCorrect(false)
