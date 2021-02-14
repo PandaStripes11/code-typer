@@ -8,12 +8,13 @@
     cursor: pointer;
     background-color: white;
     margin: 5% 0;
+    padding:  0 5%;
 }
 
 .h4 {
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 .p {
     font-weight: 300;
-    font-size: 1em;
+    font-size: 0.9em;
 }

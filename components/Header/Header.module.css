@@ -11,6 +11,11 @@
     align-items: center;
     justify-content: space-between;
 }
+.container {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+}
 
 .h2 {
     font-weight: 300;

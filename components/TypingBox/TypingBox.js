@@ -63,7 +63,6 @@ export default function TypingBox(props) {
         }, 100)
         return intervalId
     }
-
     function generatePassage() {
         let myPassage = []
         let arrayToUse
@@ -75,7 +74,6 @@ export default function TypingBox(props) {
             arrayToUse = paragraphs
         }
         for (let i = 0; i < props.passageDetails.number; i++) {
-            console.log(myPassage, i)
             if (props.passageDetails.symbols.length) {
                 let symbol;
                 let otherRandom;

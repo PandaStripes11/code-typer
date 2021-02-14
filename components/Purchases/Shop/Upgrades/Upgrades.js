@@ -15,7 +15,7 @@ export default function Upgrades(props) {
     if (displayPage === 'menu') {
         page = <Menu setDisplayPage={setDisplayPage}/>
     } else if (displayPage === 'multipliers') {
-        page = <Multipliers setDisplayPage={setDisplayPage}/>
+        page = <Multipliers setTbucks={props.setTbucks} tbucks={props.tbucks}/>
     }
 
     return (

@@ -1,0 +1,10 @@
+.button {
+    border: none;
+    outline: none;
+    background: none;
+    padding: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1.6em;
+}

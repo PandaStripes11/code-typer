@@ -11,8 +11,8 @@ export default function PageIcon(props) {
             <div>
                 <Image 
                     src={props.src}
-                    height={50}
-                    width={50}
+                    height={80}
+                    width={80}
                 />
             </div>
             <div>
