@@ -1,0 +1,19 @@
+.icon {
+    width: 45%;
+    height: 35vh;
+    box-shadow: 3px 6px 50px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: white;
+    margin: 5% 0;
+}
+
+.h4 {
+    font-size: 1.2em;
+}
+.p {
+    font-weight: 300;
+    font-size: 1em;
+}

@@ -19,6 +19,8 @@ export default function Purchases(props) {
             <Shop
                 displayShop={displayShop}
                 setDisplayShop={setDisplayShop}
+                tbucks={props.cbucks}
+                setTbucks={props.setCbucks}
             />
             <BattlePass
                 displayBattlePass={displayBattlePass}

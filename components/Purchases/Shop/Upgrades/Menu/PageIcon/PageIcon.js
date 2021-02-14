@@ -1,0 +1,24 @@
+import PageIconStyles from './PageIcon.module.css'
+import Image from 'next/image'
+
+export default function PageIcon(props) {
+    const handleClick = () => {
+        props.setDisplayPage(props.pageToDisplay)
+    }
+
+    return (
+        <button className={PageIconStyles.icon} onClick={handleClick}>
+            <div>
+                <Image 
+                    src={props.src}
+                    height={50}
+                    width={50}
+                />
+            </div>
+            <div>
+                <h4 className={PageIconStyles.h4}>{props.name}</h4>
+                <p className={PageIconStyles.p}>{props.description}</p>
+            </div>
+        </button>
+    )
+}

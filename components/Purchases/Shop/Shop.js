@@ -1,6 +1,7 @@
 import ShopStyles from './Shop.module.css'
 
 import Upgrades from './Upgrades/Upgrades'
+import Themes from './Themes/Themes'
 import FootNav from './FootNav/FootNav'
 
 import Image from 'next/image'
@@ -14,6 +15,13 @@ export default function Shop(props) {
         props.setDisplayShop(!props.displayShop)
     }
 
+    let page;
+    if (currPage === 'upgrades') {
+        page = <Upgrades tbucks={props.tbucks} setTbucks={props.setTbucks}/>
+    } else if (currPage === 'themes') {
+        page = <Themes tbucks={props.tbucks} setTbucks={props.setTbucks}/>
+    }
+
     return (
         props.displayShop ? <div className={ShopStyles.div}>
             <div className={ShopStyles.container}>
@@ -24,7 +32,7 @@ export default function Shop(props) {
                         width={50}
                     />
                 </button>
-                <Upgrades />
+                {page}
                 <FootNav 
                     currPage={currPage}
                     setCurrPage={setCurrPage}
