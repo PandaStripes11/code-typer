@@ -11,7 +11,12 @@ export default function Multipliers(props) {
 
     return (
         <div className={MultiplierStyles.div}>
-
+            <button>
+                <span>Multiplier</span>
+                <span>Level {levelMultiplier + 1}</span>
+                <span>x{MultiplierData[levelMultiplier].multiplier}</span>
+                <span>Buy for {MultiplierData[levelMultiplier].cost}</span>
+            </button>
         </div>
     )
 }

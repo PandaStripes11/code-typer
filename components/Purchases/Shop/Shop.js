@@ -17,7 +17,12 @@ export default function Shop(props) {
 
     let page;
     if (currPage === 'upgrades') {
-        page = <Upgrades tbucks={props.tbucks} setTbucks={props.setTbucks}/>
+        page = <Upgrades 
+            tbucks={props.tbucks} 
+            setTbucks={props.setTbucks} 
+            multiplier={props.multiplier}
+            setMultiplier={props.setMultiplier}
+        />
     } else if (currPage === 'themes') {
         page = <Themes tbucks={props.tbucks} setTbucks={props.setTbucks}/>
     }

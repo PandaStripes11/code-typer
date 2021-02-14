@@ -11,6 +11,7 @@ import {useState} from 'react'
 export default function App() {
     const [tbucks, setTbucks] = useState(0)
     const [customize, setCustomize] = useState(false)
+    const [multiplier, setMultiplier] = useState(1)
     const [passageDetails, setPassageDetails] = useState({
         type: 'words',
         symbols: [],
@@ -32,6 +33,8 @@ export default function App() {
             <Purchases 
                 cbucks={tbucks}
                 setCbucks={setTbucks}
+                multiplier={multiplier}
+                setMultiplier={setMultiplier}
             />
             <h1>Type Master</h1>
             <TypingBox 
