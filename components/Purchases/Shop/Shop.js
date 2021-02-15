@@ -6,10 +6,12 @@ import FootNav from './FootNav/FootNav'
 
 import Image from 'next/image'
 
+import {MultiplierData} from '../../../utils/multiplierData'
 import {useState} from 'react'
 
 export default function Shop(props) {
     const [currPage, setCurrPage] = useState('upgrades')
+    const [boughtMultipliers, setBoughtMultipliers] = useState(new Array(MultiplierData.length).fill(false))
 
     const handleClick = () => {
         props.setDisplayShop(!props.displayShop)
@@ -22,6 +24,8 @@ export default function Shop(props) {
             setTbucks={props.setTbucks} 
             multiplier={props.multiplier}
             setMultiplier={props.setMultiplier}
+            boughtMultipliers={boughtMultipliers}
+            setBoughtMultipliers={setBoughtMultipliers}
         />
     } else if (currPage === 'themes') {
         page = <Themes tbucks={props.tbucks} setTbucks={props.setTbucks}/>

@@ -1,5 +1,7 @@
 import UpgradesStyles from './Upgrades.module.css'
 
+import {MultiplierData} from '../../../../utils/multiplierData'
+
 import Multipliers from './Multipliers/Multipliers'
 import Menu from './Menu/Menu'
 import { useState } from 'react'
@@ -15,7 +17,12 @@ export default function Upgrades(props) {
     if (displayPage === 'menu') {
         page = <Menu setDisplayPage={setDisplayPage}/>
     } else if (displayPage === 'multipliers') {
-        page = <Multipliers setTbucks={props.setTbucks} tbucks={props.tbucks}/>
+        page = <Multipliers 
+                    setTbucks={props.setTbucks} 
+                    tbucks={props.tbucks}
+                    boughtMultipliers={props.boughtMultipliers}
+                    setBoughtMultipliers={props.setBoughtMultipliers}
+                />
     }
 
     return (

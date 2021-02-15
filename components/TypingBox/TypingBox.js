@@ -51,6 +51,10 @@ export default function TypingBox(props) {
         }
     }, [updater])
 
+    useEffect(() => {
+        document.getElementById('typing-input').focus()
+    }, [passageText])
+
     function changeUpdater() {
         let intervalId = setInterval(() => {
             setUpdater(prev => {

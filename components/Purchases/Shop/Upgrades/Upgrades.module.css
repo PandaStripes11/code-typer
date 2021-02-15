@@ -6,7 +6,7 @@
 
 .button {
     position: fixed;
-    top: calc(50px + 1%);
+    top: calc(55px + 1%);
     left: 1%;
     display: block;
     outline: none;
