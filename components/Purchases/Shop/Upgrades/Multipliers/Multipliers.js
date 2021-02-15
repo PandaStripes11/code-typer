@@ -2,25 +2,44 @@ import MultiplierStyles from './Multipliers.module.css'
 
 import {MultiplierData} from '../../../../../utils/multiplierData'
 
+import ErrorMessage from '../ErrorMessage/ErrorMessage'
+
 import {useState} from 'react'
 import Image from 'next/image'
 
 export default function Multipliers(props) {
     const [levelMultiplier, setLevelMultiplier] = useState(0)
+    const [errorMessage, setErrorMessage] = useState(null)
 
     const handleButtonClick = () => {
+        console.log(props.tbucks, MultiplierData[levelMultiplier].cost)
         if (props.boughtMultipliers[levelMultiplier]) {
             return
-        }
-        props.setBoughtMultipliers(() => {
-            return props.boughtMultipliers.map((elem, index) => {
-                if (index <= levelMultiplier) {
-                    return true
-                } else {
-                    return elem
-                }
+        } else if (props.tbucks < MultiplierData[levelMultiplier].cost) {
+            setErrorMessage(<ErrorMessage 
+                src="/code-typer.png"
+                title="You need more T-bucks"
+                description="Keep your hands on homerow and keep typing."
+            />)
+            setTimeout(() => {
+                setErrorMessage(null)
+            }, 3000)
+            return
+        } else {
+            props.setBoughtMultipliers(() => {
+                return props.boughtMultipliers.map((elem, index) => {
+                    if (index <= levelMultiplier) {
+                        return true
+                    } else {
+                        return elem
+                    }
+                })
             })
-        })
+            props.setTbucks(prev => {
+                return prev - MultiplierData[levelMultiplier].cost
+            })
+            props.setMultiplier(MultiplierData[levelMultiplier].multiplier)
+        }
     }
     const handleListClick = (e) => {
         const index = parseInt(e.target.innerHTML) - 1
@@ -76,6 +95,7 @@ export default function Multipliers(props) {
                                 <li 
                                     className={`${MultiplierStyles.green} ${MultiplierStyles.active}`} 
                                     onClick={handleListClick}
+                                    key={elem.multiplier}
                                 >
                                     {index + 1}
                                 </li>
@@ -85,6 +105,7 @@ export default function Multipliers(props) {
                                 <li 
                                     className={`${MultiplierStyles.red} ${MultiplierStyles.active}`} 
                                     onClick={handleListClick}
+                                    key={elem.multiplier}
                                 >
                                     {index + 1}
                                 </li>
@@ -99,6 +120,7 @@ export default function Multipliers(props) {
                 })}
                 <li className={MultiplierStyles.arrows} onClick={handleRightArrowClick}>▶</li>
             </ul>
+            {errorMessage}
         </div>
     )
 }

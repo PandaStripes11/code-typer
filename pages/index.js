@@ -43,6 +43,7 @@ export default function App() {
                 setCbucks={setTbucks}
                 cbucks={tbucks}
                 setDisplayAnimation={setDisplayAnimation}
+                multiplier={multiplier}
             />
             <Animation 
                 displayAnimation={displayAnimation}

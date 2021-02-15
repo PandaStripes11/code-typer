@@ -22,6 +22,8 @@ export default function Upgrades(props) {
                     tbucks={props.tbucks}
                     boughtMultipliers={props.boughtMultipliers}
                     setBoughtMultipliers={props.setBoughtMultipliers}
+                    multiplier={props.multiplier}
+                    setMultiplier={props.setMultiplier}
                 />
     }
 

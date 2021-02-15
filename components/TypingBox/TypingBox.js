@@ -156,7 +156,7 @@ export default function TypingBox(props) {
                 props.setDisplayAnimation(true)
                 setTimeout(() => {
                     props.setCbucks(
-                        props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15)
+                        props.cbucks + Math.round(Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15) * props.multiplier)
                     )
                 }, 1600)
                 
@@ -191,7 +191,7 @@ export default function TypingBox(props) {
                 props.setDisplayAnimation(true)
                 setTimeout(() => {
                     props.setCbucks(
-                        props.cbucks + Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15)
+                        props.cbucks + Math.round(Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15) * props.multiplier)
                     )
                 }, 1600)
                 setCorrect(false)
