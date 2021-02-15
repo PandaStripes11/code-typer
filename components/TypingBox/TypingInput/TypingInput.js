@@ -20,6 +20,9 @@ export default function TypingInput(props) {
         }
     }, [])
     */
+   useEffect(() => {
+       document.getElementById('typing-input').focus()
+   }, [])
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -39,6 +42,7 @@ export default function TypingInput(props) {
                     placeholder={props.placeholder}
                     onChange={props.onChange}
                     value={props.value}
+                    id="typing-input"
                     id="typing-input"
                 />
             </form>

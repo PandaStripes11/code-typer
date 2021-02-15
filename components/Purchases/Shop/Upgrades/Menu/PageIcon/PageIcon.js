@@ -14,7 +14,7 @@ export default function PageIcon(props) {
                     height={80}
                     width={80}
                 />
-            </div>
+            </div><br/>
             <div>
                 <h4 className={PageIconStyles.h4}>{props.name}</h4>
                 <p className={PageIconStyles.p}>{props.description}</p>

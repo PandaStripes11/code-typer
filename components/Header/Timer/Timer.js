@@ -17,12 +17,13 @@ export default function Timer() {
         } else if (!active && timer) {
             setTimer(0)
         } else {
+            document.getElementById('typing-input').focus()
             setActive(true)
             const currentIntervalId = setInterval(() => {
                 setTimer(prev => prev + 30)
             }, 30)
             setIntervalId(currentIntervalId)
-        }
+        } 
     }
 
     const formattedTimer = (timer / 1000).toFixed(2)
