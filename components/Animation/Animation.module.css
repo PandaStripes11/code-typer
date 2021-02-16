@@ -25,11 +25,9 @@
         opacity: 1;
         top: calc(60px + 1%);
         right: 5vw;
-    } 75% {
+    } 65% {
         opacity: 1;
     } 100% {
-        top: 0;
-        right: 0;
         opacity: 0;
     }
 }
@@ -43,6 +41,6 @@
     justify-content: center;
     color: white;
     line-height: 1em;
-    letter-spacing: -5px;
-    word-spacing: -8px;
+    letter-spacing: -3px;
+    word-spacing: -10px;
 }

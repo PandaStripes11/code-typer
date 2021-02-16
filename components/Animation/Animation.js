@@ -17,14 +17,15 @@ export default function Animation(props) {
     return (
         props.displayAnimation || (props.circumvent && display) ?
             <div className={AnimationStyles.imageContainer}>
+                {props.negative ? <h6>-</h6> : null}
                 <Image 
                     src="/code-typer.png"
-                    height={40}
-                    width={40}
+                    height={25}
+                    width={25}
                 />
                 <h6>{props.value}&nbsp;</h6>
                 {props.multiplier > 1 ?
-                    <h2 className={AnimationStyles.circles} style={{backgroundColor: 'mediumseagreen', paddingRight: "18px"}}>
+                    <h2 className={AnimationStyles.circles} style={{backgroundColor: 'mediumseagreen', paddingRight: "16px"}}>
                         x&nbsp;{props.multiplier}
                     </h2> : null
                 }

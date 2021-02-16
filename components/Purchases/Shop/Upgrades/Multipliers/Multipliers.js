@@ -36,7 +36,7 @@ export default function Multipliers(props) {
                     }
                 })
             })
-            setAnimation(<Animation circumvent="true" value={-MultiplierData[levelMultiplier].cost}/>)
+            setAnimation(<Animation circumvent="true" value={MultiplierData[levelMultiplier].cost} negative={true}/>)
             setTimeout(() => {props.setTbucks(prev => {
                 setAnimation(null)
                 return prev - MultiplierData[levelMultiplier].cost

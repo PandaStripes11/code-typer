@@ -49,3 +49,15 @@ input[type="submit"].submit:focus {
     top: 5px;
     background-size: inherit;
 }
+
+@media only screen and (max-width: 1000px) {
+    .div {
+        width: 350px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .div {
+        width: 300px;
+    }
+}
