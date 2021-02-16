@@ -9,7 +9,7 @@ import Animation from '../components/Animation/Animation'
 import {useState} from 'react'
 
 export default function App() {
-    const [tbucks, setTbucks] = useState(10000)
+    const [tbucks, setTbucks] = useState(0)
     const [customize, setCustomize] = useState(false)
     const [multiplier, setMultiplier] = useState(1)
     const [passageDetails, setPassageDetails] = useState({

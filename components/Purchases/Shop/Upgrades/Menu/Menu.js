@@ -13,7 +13,7 @@ export default function Menu(props) {
                 description={"Multiply the amount of T-bucks you get each time you finish a passage"}
             />
             <PageIcon
-                pageToDisplay={"multipliers"}
+                pageToDisplay={"bonuses"}
                 setDisplayPage={props.setDisplayPage}
                 name={"Bonuses"}
                 src={"/bonuses.png"}

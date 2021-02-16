@@ -4,6 +4,8 @@ import {MultiplierData} from '../../../../utils/multiplierData'
 
 import Multipliers from './Multipliers/Multipliers'
 import Menu from './Menu/Menu'
+import Bonuses from './Bonuses/Bonuses'
+
 import { useState } from 'react'
 
 export default function Upgrades(props) {
@@ -25,6 +27,8 @@ export default function Upgrades(props) {
                     multiplier={props.multiplier}
                     setMultiplier={props.setMultiplier}
                 />
+    } else if (displayPage === 'bonuses') {
+        page = <Bonuses />
     }
 
     return (
