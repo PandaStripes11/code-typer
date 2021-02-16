@@ -44,6 +44,7 @@ export default function TypingInput(props) {
                     value={props.value}
                     id="typing-input"
                     id="typing-input"
+                    autoComplete="off"
                 />
             </form>
             <button 

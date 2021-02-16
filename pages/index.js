@@ -9,7 +9,7 @@ import Animation from '../components/Animation/Animation'
 import {useState} from 'react'
 
 export default function App() {
-    const [tbucks, setTbucks] = useState(0)
+    const [tbucks, setTbucks] = useState(10000)
     const [customize, setCustomize] = useState(false)
     const [multiplier, setMultiplier] = useState(1)
     const [passageDetails, setPassageDetails] = useState({
@@ -18,6 +18,7 @@ export default function App() {
         number: 50
     })
     const [displayAnimation, setDisplayAnimation] = useState(false)
+    const [animationValue, setAnimationValue] = useState(0)
 
     return (
         <>
@@ -44,11 +45,14 @@ export default function App() {
                 cbucks={tbucks}
                 setDisplayAnimation={setDisplayAnimation}
                 multiplier={multiplier}
+                animationValue={animationValue}
+                setAnimationValue={setAnimationValue}
             />
             <Animation 
                 displayAnimation={displayAnimation}
                 setDisplayAnimation={setDisplayAnimation}
-                
+                multiplier={multiplier}
+                value={animationValue}
             />
             <CustomizeDisplay
                 display={customize} 

@@ -126,7 +126,9 @@ export default function TypingBox(props) {
             clearInterval(intervalId)
             return
         } else if (currentWord === words.length - 1) {
+            //Correct
             if (target.value === words[currentWord]) {
+                clearInterval(intervalId)
                 setCorrectWords(prev => {
                     const newWords = prev.map((elem, index) => {
                         if (index === currentWord) {
@@ -139,7 +141,6 @@ export default function TypingBox(props) {
                 })
                 setCurrentWord(prev => prev + 1)
                 setCorrect(true)
-                clearInterval(intervalId)
                 if (acc < 25) {
                     if (props.cbucks < 100) {
                         props.setCbucks(0)
@@ -153,15 +154,19 @@ export default function TypingBox(props) {
                 if (acc < 60) {
                     return
                 }
+                const cbucks = Math.round(Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15) * props.multiplier)
+                props.setAnimationValue(cbucks)
                 props.setDisplayAnimation(true)
                 setTimeout(() => {
                     props.setCbucks(
                         props.cbucks + Math.round(Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15) * props.multiplier)
                     )
-                }, 1600)
+                }, 2000)
                 
                 return
+            //Incorrect
             } else if (target.value.endsWith(' ') && (target.value !== words[currentWord] && target.value !== words[currentWord] + ' ')) {
+                clearInterval(intervalId)
                 setCorrectWords(prev => {
                     const newWords = prev.map((elem, index) => {
                         if (index === currentWord) {
@@ -174,7 +179,6 @@ export default function TypingBox(props) {
                     return newWords
                 })
                 setCurrentWord(prev => prev + 1)
-                clearInterval(intervalId)
                 if (acc < 25) {
                     if (props.cbucks < 100) {
                         props.setCbucks(0)
@@ -188,12 +192,14 @@ export default function TypingBox(props) {
                 if (acc < 60) {
                     return
                 }
+                const cbucks = Math.round(Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15) * props.multiplier)
+                props.setAnimationValue(cbucks)
                 props.setDisplayAnimation(true)
                 setTimeout(() => {
                     props.setCbucks(
                         props.cbucks + Math.round(Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15) * props.multiplier)
                     )
-                }, 1600)
+                }, 2000)
                 setCorrect(false)
                 return
             }
@@ -236,11 +242,11 @@ export default function TypingBox(props) {
     }
 
     const handleClick = () => {
+        clearInterval(intervalId)
         setText('')
         setCurrentWord(0)
         setCorrect(undefined)
         setCorrectWords(new Array(words.length).fill(0))
-        clearInterval(intervalId)
         setAcc(0)
         setWpm(0)
         setUpdater(0)

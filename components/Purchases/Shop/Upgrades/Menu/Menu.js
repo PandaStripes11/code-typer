@@ -12,6 +12,13 @@ export default function Menu(props) {
                 src={"/green_x.png"}
                 description={"Multiply the amount of T-bucks you get each time you finish a passage"}
             />
+            <PageIcon
+                pageToDisplay={"multipliers"}
+                setDisplayPage={props.setDisplayPage}
+                name={"Bonuses"}
+                src={"/bonuses.png"}
+                description={"Boost your accuracy or wpm multipliers each time you finish a passage"}
+            />
         </div>
     )
 }

@@ -1,31 +1,48 @@
 .imageContainer {
     position: fixed;
-    top: 50vh;
-    right: 50vw;
-    animation: move 1.5s ease-out 0s 1 normal forwards;
-    z-index: 10;
-    box-shadow: 3px 4px 6px 0px rgba(0, 0, 0, 0.6);
-    border-radius: 100%;
-    width: 65px;
-    height: 65px;
-    background-color: white;
+    top: calc(60px + 1%);
+    right: 5vw;
+    animation: move 2s ease-out 0s 1 normal forwards;
+    z-index: 100;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.imageContainer h6 {
+    font-size: 2em;
 }
 
 @keyframes move {
     0% {
-        top: 50vh;
-        right: 50vw;
+        top: calc(60px + 1%);
+        right: 5vw;
         opacity: 0;
-    } 5% {
+    } 25% {
         opacity: 1;
-    } 20% {
-        top: 50vh;
-        right: 50vw;
+        top: calc(60px + 1%);
+        right: 5vw;
     } 50% {
+        opacity: 1;
+        top: calc(60px + 1%);
+        right: 5vw;
+    } 75% {
         opacity: 1;
     } 100% {
         top: 0;
         right: 0;
         opacity: 0;
     }
+}
+
+.circles {
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    line-height: 1em;
+    letter-spacing: -5px;
+    word-spacing: -8px;
 }

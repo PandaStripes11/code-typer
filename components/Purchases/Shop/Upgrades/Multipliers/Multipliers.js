@@ -3,6 +3,7 @@ import MultiplierStyles from './Multipliers.module.css'
 import {MultiplierData} from '../../../../../utils/multiplierData'
 
 import ErrorMessage from '../ErrorMessage/ErrorMessage'
+import Animation from '../../../../Animation/Animation'
 
 import {useState} from 'react'
 import Image from 'next/image'
@@ -10,9 +11,9 @@ import Image from 'next/image'
 export default function Multipliers(props) {
     const [levelMultiplier, setLevelMultiplier] = useState(0)
     const [errorMessage, setErrorMessage] = useState(null)
+    const [animation, setAnimation] = useState(null)
 
     const handleButtonClick = () => {
-        console.log(props.tbucks, MultiplierData[levelMultiplier].cost)
         if (props.boughtMultipliers[levelMultiplier]) {
             return
         } else if (props.tbucks < MultiplierData[levelMultiplier].cost) {
@@ -35,9 +36,11 @@ export default function Multipliers(props) {
                     }
                 })
             })
-            props.setTbucks(prev => {
+            setAnimation(<Animation circumvent="true" value={-MultiplierData[levelMultiplier].cost}/>)
+            setTimeout(() => {props.setTbucks(prev => {
+                setAnimation(null)
                 return prev - MultiplierData[levelMultiplier].cost
-            })
+            })}, 2000)
             props.setMultiplier(MultiplierData[levelMultiplier].multiplier)
         }
     }
@@ -87,7 +90,7 @@ export default function Multipliers(props) {
                 </span>
             </button>
             <ul className={MultiplierStyles.list}>
-                <li className={MultiplierStyles.arrows} onClick={handleLeftArrowClick}>◀</li>
+                <li className={MultiplierStyles.arrows} onClick={handleLeftArrowClick} key="left-arrow">◀</li>
                 {MultiplierData.map((elem, index) => {
                     if (index === levelMultiplier) {
                         if (props.boughtMultipliers[index]) {
@@ -113,14 +116,15 @@ export default function Multipliers(props) {
                         }
                     }
                     if (props.boughtMultipliers[index]) {
-                        return <li className={MultiplierStyles.green} onClick={handleListClick}>{index + 1}</li>
+                        return <li className={MultiplierStyles.green} onClick={handleListClick} key={elem.multiplier}>{index + 1}</li>
                     } else {
-                        return <li className={MultiplierStyles.red} onClick={handleListClick}>{index + 1}</li>
+                        return <li className={MultiplierStyles.red} onClick={handleListClick} key={elem.multiplier}>{index + 1}</li>
                     }
                 })}
-                <li className={MultiplierStyles.arrows} onClick={handleRightArrowClick}>▶</li>
+                <li className={MultiplierStyles.arrows} onClick={handleRightArrowClick} key="right-arrow">▶</li>
             </ul>
             {errorMessage}
+            {animation}
         </div>
     )
 }
