@@ -11,7 +11,6 @@ import Image from 'next/image'
 export default function Multipliers(props) {
     const [levelMultiplier, setLevelMultiplier] = useState(0)
     const [errorMessage, setErrorMessage] = useState(null)
-    const [animation, setAnimation] = useState(null)
 
     const handleButtonClick = () => {
         if (props.boughtMultipliers[levelMultiplier]) {
@@ -36,11 +35,9 @@ export default function Multipliers(props) {
                     }
                 })
             })
-            setAnimation(<Animation circumvent="true" value={MultiplierData[levelMultiplier].cost} negative={true}/>)
-            setTimeout(() => {props.setTbucks(prev => {
-                setAnimation(null)
+            props.setTbucks(prev => {
                 return prev - MultiplierData[levelMultiplier].cost
-            })}, 2000)
+            })
             props.setMultiplier(MultiplierData[levelMultiplier].multiplier)
         }
     }
@@ -124,7 +121,6 @@ export default function Multipliers(props) {
                 <li className={MultiplierStyles.arrows} onClick={handleRightArrowClick} key="right-arrow">▶</li>
             </ul>
             {errorMessage}
-            {animation}
         </div>
     )
 }

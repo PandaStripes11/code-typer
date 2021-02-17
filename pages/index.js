@@ -6,10 +6,12 @@ import Header from '../components/Header/Header'
 import Purchases from '../components/Purchases/Purchases'
 import Animation from '../components/Animation/Animation'
 
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
+
+import {colors} from '../utils/colors'
 
 export default function App() {
-    const [tbucks, setTbucks] = useState(0)
+    const [tbucks, setTbucks] = useState(100000)
     const [customize, setCustomize] = useState(false)
     const [multiplier, setMultiplier] = useState(1)
     const [passageDetails, setPassageDetails] = useState({
@@ -19,6 +21,11 @@ export default function App() {
     })
     const [displayAnimation, setDisplayAnimation] = useState(false)
     const [animationValue, setAnimationValue] = useState(0)
+
+    useEffect(() => {
+        console.log(colors)
+        document.getElementsByTagName('body')[0].style.backgroundColor = colors.primaryColor
+    })
 
     return (
         <>

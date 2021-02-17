@@ -11,12 +11,12 @@ export default function FootNav(props) {
     let upgradeStyles, themeStyles
     if (props.currPage === "upgrades") {
         upgradeStyles = {
-            backgroundSize: "100% 2px"
+            backgroundSize: "100% 3px"
         }
         themeStyles = {}
     } else if (props.currPage === "themes") {
         themeStyles = {
-            backgroundSize: "100% 2px"
+            backgroundSize: "100% 3px"
         }
         upgradeStyles = {}
     }

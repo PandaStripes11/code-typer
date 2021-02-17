@@ -21,7 +21,9 @@
     transition: all 0.4s ease;
 }
 .button:hover {
-    animation: waver 1s linear 0s infinite;
+    /*animation: waver 1s linear 0s infinite;*/
+    transform: translateX(-25%);
+    transition: all 0.4s ease;
 }
 
 @keyframes waver {

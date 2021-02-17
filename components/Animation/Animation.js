@@ -12,20 +12,20 @@ export default function Animation(props) {
         } else {
             setDisplay(false)
         }
-    }, 3000)
+    }, 5000)
 
     return (
         props.displayAnimation || (props.circumvent && display) ?
             <div className={AnimationStyles.imageContainer}>
-                {props.negative ? <h6>-</h6> : null}
+                {props.negative || props.value < 0 ? <h6>-</h6> : null}
                 <Image 
                     src="/code-typer.png"
                     height={25}
                     width={25}
                 />
-                <h6>{props.value}&nbsp;</h6>
+                <h6>{Math.abs(props.value)}&nbsp;</h6>
                 {props.multiplier > 1 ?
-                    <h2 className={AnimationStyles.circles} style={{backgroundColor: 'mediumseagreen', paddingRight: "16px"}}>
+                    <h2 className={AnimationStyles.circles} style={{backgroundColor: 'mediumseagreen', paddingRight: "12px"}}>
                         x&nbsp;{props.multiplier}
                     </h2> : null
                 }

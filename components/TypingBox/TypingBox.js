@@ -142,6 +142,8 @@ export default function TypingBox(props) {
                 setCurrentWord(prev => prev + 1)
                 setCorrect(true)
                 if (acc < 25) {
+                    props.setAnimationValue(-100)
+                    props.setDisplayAnimation(true)
                     if (props.cbucks < 100) {
                         props.setCbucks(0)
                     } else {
@@ -152,6 +154,8 @@ export default function TypingBox(props) {
                     return
                 }
                 if (acc < 60) {
+                    props.setAnimationValue(0)
+                    props.setDisplayAnimation(true)
                     return
                 }
                 const cbucks = Math.round(Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15) * props.multiplier)
@@ -180,6 +184,8 @@ export default function TypingBox(props) {
                 })
                 setCurrentWord(prev => prev + 1)
                 if (acc < 25) {
+                    props.setAnimationValue(-100)
+                    props.setDisplayAnimation(true)
                     if (props.cbucks < 100) {
                         props.setCbucks(0)
                     } else {
@@ -190,6 +196,8 @@ export default function TypingBox(props) {
                     return
                 }
                 if (acc < 60) {
+                    props.setAnimationValue(0)
+                    props.setDisplayAnimation(true)
                     return
                 }
                 const cbucks = Math.round(Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15) * props.multiplier)
