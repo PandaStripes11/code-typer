@@ -17,6 +17,9 @@
 .icon:hover {
     box-shadow: 3px 6px 50px 8px rgba(0, 0, 0, 0.2);
 }
+.icon h2 {
+    color: black
+}
 
 .list {
     display: flex;

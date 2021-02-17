@@ -12,7 +12,6 @@
 .button {
     display: block;
     outline: none;
-    background: white;
     border: none;
     padding: 0.5% 2%;
     font-size: 1.3em;
@@ -23,10 +22,10 @@
     white-space: nowrap;
     overflow: wrap;
     height: 60%;
-    background: linear-gradient(cornflowerblue, cornflowerblue) bottom / 0% 3px no-repeat;
+    background: linear-gradient(cornflowerblue, cornflowerblue) bottom / 0% 2px no-repeat;
 }
 .button:hover {
-    background-size: 100% 3px;
+    background-size: 100% 2px;
 }
 
 

@@ -1,4 +1,5 @@
 import FootNavStyles from './FootNav.module.css'
+import {colors} from '../../../../utils/colors'
 
 export default function FootNav(props) {
     const handleUpgradesClick = () => {
@@ -11,12 +12,12 @@ export default function FootNav(props) {
     let upgradeStyles, themeStyles
     if (props.currPage === "upgrades") {
         upgradeStyles = {
-            backgroundSize: "100% 3px"
+            backgroundSize: "100% 2px"
         }
         themeStyles = {}
     } else if (props.currPage === "themes") {
         themeStyles = {
-            backgroundSize: "100% 3px"
+            backgroundSize: "100% 2px"
         }
         upgradeStyles = {}
     }
@@ -26,12 +27,12 @@ export default function FootNav(props) {
             <button
                 className={`${FootNavStyles.button} ${FootNavStyles.one}`} 
                 onClick={handleUpgradesClick}
-                style={upgradeStyles}
+                style={upgradeStyles, colors.theme.shop.footNavStyles}
             >⚡ Upgrades</button>
             <button 
                 className={`${FootNavStyles.button} ${FootNavStyles.two}`}
                 onClick={handleThemesClick}
-                style={themeStyles}
+                style={themeStyles, colors.theme.shop.footNavStyles}
             >🔴 Themes</button>
         </section>
     )

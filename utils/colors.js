@@ -14,6 +14,34 @@ let colors = {
                 color: "#000000"
             }
         },
+        typingBox: {
+            background: "#dcdcdc"
+        },
+        customize: {
+            color: "#000000"
+        },
+        credits: {
+            background: "#154360"
+        },
+        customizeDisplay: {
+            background: "#FFFFFF"
+        },
+        icons: {
+            background: "#FFFFFF",
+            color: "#000000"
+        },
+        battlePass: {
+            background: "#FFFFFF"
+        },
+        shop: {
+            shopStyles: {
+                background: "#FFFFFF",
+                color: "#000000"
+            },
+            footNavStyles: {
+                color: "#000000"
+            }
+        }
     },
     theme: {
         body: {
@@ -41,6 +69,22 @@ let colors = {
         },
         customizeDisplay: {
             background: "#FFFFFF"
+        },
+        icons: {
+            background: "#FFFFFF",
+            color: "#000000"
+        },
+        battlePass: {
+            background: "#FFFFFF"
+        },
+        shop: {
+            shopStyles: {
+                background: "#FFFFFF",
+                color: "#000000"
+            },
+            footNavStyles: {
+                color: "#000000"
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 import UpgradesStyles from './Upgrades.module.css'
 
-import {MultiplierData} from '../../../../utils/multiplierData'
+import {colors} from '../../../../utils/colors'
 
 import Multipliers from './Multipliers/Multipliers'
 import Menu from './Menu/Menu'

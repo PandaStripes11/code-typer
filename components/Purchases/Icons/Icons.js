@@ -1,5 +1,7 @@
 import Image from 'next/image'
 
+import {colors} from '../../../utils/colors'
+
 export default function Icons(props) {
     const handleShopClick = () => {
         props.setDisplayShop(!props.displayShop)
@@ -11,7 +13,7 @@ export default function Icons(props) {
 
     return (
         <aside>
-            <button className="store" onClick={handleShopClick}>
+            <button className="store" onClick={handleShopClick} style={colors.theme.icons}>
                 <Image 
                     src="/shopping-cart.png"
                     width={30}
@@ -19,7 +21,7 @@ export default function Icons(props) {
                 />
                 &nbsp;Store
             </button>
-            <button className="battle-pass" onClick={handleBattlePassClick}>
+            <button className="battle-pass" onClick={handleBattlePassClick} style={colors.theme.icons}>
                 <Image
                     src="/battle-pass.png"
                     width={30}

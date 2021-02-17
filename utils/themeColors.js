@@ -11,11 +11,11 @@ const themeColors = [
             header: {
                 headerStyles: {
                     background: "#333333",
-                    color: "#CCCCCC"
+                    color: "#EEEEEE"
                 },
                 timerStyles: {
                     background: "#333333",
-                    color: "#CCCCCC"
+                    color: "#EEEEEE"
                 } 
             },
             typingBox: {
@@ -29,6 +29,22 @@ const themeColors = [
             },
             customizeDisplay: {
                 background: "#333333"
+            },
+            icons: {
+                background: "#454545",
+                color: "#EEEEEE"
+            },
+            battlePass: {
+                background: "#222222"
+            },
+            shop: {
+                shopStyles: {
+                    background: "#222222",
+                    color: "#EEEEEE"
+                },
+                footNavStyles: {
+                    color: "#EEEEEE"
+                }
             }
         }  
     }

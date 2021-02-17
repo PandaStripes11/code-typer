@@ -9,6 +9,8 @@ import Image from 'next/image'
 import {MultiplierData} from '../../../utils/multiplierData'
 import {useState} from 'react'
 
+import {colors} from '../../../utils/colors'
+
 export default function Shop(props) {
     const [currPage, setCurrPage] = useState('upgrades')
     const [boughtMultipliers, setBoughtMultipliers] = useState(new Array(MultiplierData.length).fill(false))
@@ -32,7 +34,7 @@ export default function Shop(props) {
     }
 
     return (
-        props.displayShop ? <div className={ShopStyles.div}>
+        props.displayShop ? <div className={ShopStyles.div} style={colors.theme.shop.shopStyles}>
             <div className={ShopStyles.container}>
                 <button className={ShopStyles.button} onClick={handleClick}>
                     <Image 
