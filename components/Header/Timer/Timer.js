@@ -4,6 +4,8 @@ import Image from 'next/image'
 
 import {useState} from 'react'
 
+import {colors} from '../../../utils/colors'
+
 export default function Timer() {
     const [active, setActive] = useState(false)
     const [timer, setTimer] = useState(0)
@@ -29,7 +31,7 @@ export default function Timer() {
     const formattedTimer = (timer / 1000).toFixed(2)
 
     return (
-        <button className={TimerStyles.button} onClick={handleClick}>
+        <button className={TimerStyles.button} onClick={handleClick} style={colors.theme.header.timerStyles}>
             <Image
                 src="/clock_icon.png"
                 height={40}

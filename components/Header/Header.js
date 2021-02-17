@@ -3,9 +3,11 @@ import Image from 'next/image'
 
 import Timer from './Timer/Timer'
 
+import {colors} from '../../utils/colors'
+
 export default function Header(props) {
     return (
-        <header className={HeaderStyles.header}>
+        <header className={HeaderStyles.header} style={colors.theme.header.headerStyles}>
             <div className={HeaderStyles.container}>
                 <Image 
                     src="/code-typer.png"

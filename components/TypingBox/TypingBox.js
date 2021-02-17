@@ -7,6 +7,8 @@ import TypingInput from './TypingInput/TypingInput.js'
 import TypingBoxStyles from './TypingBox.module.css'
 import {passageWords, sentences, paragraphs} from '../../utils/passages'
 
+import {colors} from '../../utils/colors'
+
 export default function TypingBox(props) {
     const [text, setText] = useState('') 
     const [updater, setUpdater] = useState(0)
@@ -112,14 +114,15 @@ export default function TypingBox(props) {
 
     const handleChange = ({target}) => {
         const {value} = target
-        setText(value)
 
         //Begin
-        if (currentWord === 0 && text === '') {
+        if (currentWord === 0 && text === '' && correct === undefined) {
             const currId = changeUpdater()
             setIntervalId(currId)
             setPlaceholder('')
         }
+
+        setText(value)
 
         //End
         if (currentWord >= words.length) {
@@ -270,7 +273,7 @@ export default function TypingBox(props) {
                 acc={acc}
                 setCustomizeDisplay={props.setCustomizeDisplay}
             />
-            <div className={TypingBoxStyles.typingBox}>
+            <div className={TypingBoxStyles.typingBox} style={colors.theme.typingBox}>
                 <Passage 
                     passage={passageText}
                     currentWord={currentWord}

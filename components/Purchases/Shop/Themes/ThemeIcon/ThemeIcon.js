@@ -10,7 +10,7 @@ export default function ThemeIcon(props) {
             return
         }
         props.setTbucks(props.tbucks - props.cost)
-        colors['primaryColor'] = props.colors[0]
+        colors['theme'] = props.allColors
     }
 
     return (

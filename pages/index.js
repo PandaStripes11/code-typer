@@ -23,8 +23,8 @@ export default function App() {
     const [animationValue, setAnimationValue] = useState(0)
 
     useEffect(() => {
-        console.log(colors)
-        document.getElementsByTagName('body')[0].style.backgroundColor = colors.primaryColor
+        document.getElementsByTagName('body')[0].style.background = colors.theme.body.background
+        document.getElementsByTagName('body')[0].style.color = colors.theme.body.textColor
     })
 
     return (

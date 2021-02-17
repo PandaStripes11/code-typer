@@ -1,5 +1,7 @@
 import CustomizeDisplayStyles from './CustomizeDisplay.module.css'
 
+import {colors} from '../../utils/colors'
+
 export default function CustomizeDisplay(props) {
     const handleChange = ({target}) => {
         const name = target.getAttribute("name")
@@ -53,7 +55,7 @@ export default function CustomizeDisplay(props) {
                 props.display ? CustomizeDisplayStyles.sectionActive : CustomizeDisplayStyles.sectionInactive
             }
         >
-            <div className={CustomizeDisplayStyles.div}>
+            <div className={CustomizeDisplayStyles.div} style={colors.theme.customizeDisplay}>
                 <h3 className={CustomizeDisplayStyles.title}>Welcome to the Customizer</h3><br/>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="type">Type</label><br />

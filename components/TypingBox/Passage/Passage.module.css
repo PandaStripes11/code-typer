@@ -1,9 +1,19 @@
+.p {
+    transition: none;
+}
+
 .active {
     color: cornflowerblue;
+    transition: all 0.15s ease;
 }
 .correct {
     color: mediumseagreen;
+    transition: all 0.15s ease; 
 }
 .wrong {
     color: tomato;
+    transition: all 0.15s ease;
+}
+.normal {
+    transition: all 0.15s ease;
 }

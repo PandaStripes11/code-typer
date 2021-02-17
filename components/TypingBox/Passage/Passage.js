@@ -5,11 +5,11 @@ export default function Passage(props) {
 
     return (
         <div>
-            <p>{words.map((element, index) => {
+            <p className={PassageStyles.p}>{words.map((element, index) => {
                 if (index === props.currentWord) {
                     return <span key={element + index} className={PassageStyles.active}>{element}</span>
                 } else if (index > props.currentWord) {
-                    return <span key={element + index}> {element}</span>
+                    return <span key={element + index} className={PassageStyles.normal}> {element}</span>
                 } else {
                     if (props.correctWords[index]) {
                         return <span className={PassageStyles.correct} key={element + index}>{element} </span>

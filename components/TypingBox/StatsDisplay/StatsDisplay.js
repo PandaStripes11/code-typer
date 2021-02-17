@@ -1,5 +1,7 @@
 import StatsDisplayStyles from './StatsDisplay.module.css'
 
+import {colors} from '../../../utils/colors'
+
 export default function StatsDisplay(props) {
     const handleClick = () => {
         props.setCustomizeDisplay(true)
@@ -11,6 +13,7 @@ export default function StatsDisplay(props) {
             <button 
                 className={StatsDisplayStyles.button}
                 onClick={handleClick}
+                style={colors.theme.customize}
             >Customize</button>
         </div>
     )
