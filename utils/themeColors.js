@@ -122,6 +122,68 @@ const themeColors = [
                 shop: "/light-shopping-cart.png"
             }
         }  
+    },
+    {
+        name: "Thanos",
+        cost: 10000,
+        displayColors: ["#2a3d66", "#5d54a4", "#9d65c9", "#d789d7"],
+        colors: {
+            colors: {
+                primary: "#5d54a4",
+                secondary: "#9d65c9"
+            },
+            body: {
+                background: "#5d54a4",
+                textColor: "#EEEEEE"
+            },
+            header: {
+                headerStyles: {
+                    background: "#9d65c9",
+                    color: "#EEEEEE"
+                },
+                timerStyles: {
+                    background: "#9d65c9",
+                    color: "#EEEEEE"
+                } 
+            },
+            typingBox: {
+                background: "#2a3d66"
+            },
+            typingInput: {
+                backgroundColor: "#CCCCCC"
+            },
+            customize: {
+                color: "#EEEEEE"
+            },
+            credits: {
+                background: "#9d65c9"
+            },
+            customizeDisplay: {
+                background: "#8675a9"
+            },
+            icons: {
+                background: "#8675a9",
+                color: "#EEEEEE"
+            },
+            battlePass: {
+                background: "#5d54a4"
+            },
+            shop: {
+                shopStyles: {
+                    background: "#5d54a4",
+                    color: "#EEEEEE"
+                },
+                footNavStyles: {
+                    color: "#EEEEEE", 
+                    background: "#9d65c9"
+                }
+            },
+            images: {
+                timer: "/light_clock_icon.png",
+                close: "/light_close.png",
+                shop: "/light-shopping-cart.png"
+            }
+        }  
     }
 ]
 export {themeColors}
