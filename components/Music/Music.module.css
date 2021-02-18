@@ -4,3 +4,19 @@
     top: calc(60px + 1%);
     border-radius: 100%;
 }
+.icon {
+    width: 90px;
+    height: 90px;
+    position: fixed;
+    right: 5px;
+    top: calc(55px + 1%);
+    border-radius: 100%;
+    z-index: 3;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}

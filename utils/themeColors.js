@@ -57,7 +57,9 @@ const themeColors = [
             images: {
                 timer: "/clock_icon.png",
                 close: "/close.png",
-                shop: "/shopping-cart.png"
+                shop: "/shopping-cart.png",
+                noSpeaker: "/no_speaker.png",
+                speaker: "/speaker.png"
             }
         }
     },
@@ -119,7 +121,9 @@ const themeColors = [
             images: {
                 timer: "/light_clock_icon.png",
                 close: "/light_close.png",
-                shop: "/light-shopping-cart.png"
+                shop: "/light-shopping-cart.png",
+                noSpeaker: "/light_no_speaker.png",
+                speaker: "/light_speaker.png"
             }
         }  
     },
@@ -181,7 +185,9 @@ const themeColors = [
             images: {
                 timer: "/light_clock_icon.png",
                 close: "/light_close.png",
-                shop: "/light-shopping-cart.png"
+                shop: "/light-shopping-cart.png",
+                noSpeaker: "/light_no_speaker.png",
+                speaker: "/light_speaker.png"
             }
         }  
     },
@@ -243,7 +249,9 @@ const themeColors = [
             images: {
                 timer: "/clock_icon.png",
                 close: "/close.png",
-                shop: "/shopping-cart.png"
+                shop: "/shopping-cart.png",
+                noSpeaker: "/no_speaker.png",
+                speaker: "/speaker.png"
             }
         }  
     }

@@ -97,7 +97,9 @@ let colors = {
         images: {
             timer: "/clock_icon.png",
             close: "/close.png",
-            shop: "/shopping-cart.png"
+            shop: "/shopping-cart.png",
+            noSpeaker: "/no_speaker.png",
+            speaker: "/speaker.png"
         }
     }
 }
