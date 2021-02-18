@@ -1,0 +1,6 @@
+.music {
+    position: fixed;
+    right: 10px;
+    top: calc(60px + 1%);
+    border-radius: 100%;
+}

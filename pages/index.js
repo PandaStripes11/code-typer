@@ -5,6 +5,7 @@ import CustomizeDisplay from '../components/CustomizeDisplay/CustomizeDisplay'
 import Header from '../components/Header/Header'
 import Purchases from '../components/Purchases/Purchases'
 import Animation from '../components/Animation/Animation'
+import Music from '../components/Music/Music'
 
 import {useState, useEffect} from 'react'
 
@@ -39,6 +40,7 @@ export default function App() {
             <Header 
                 cbucks={tbucks}
             />
+            <Music/>
             <Purchases 
                 cbucks={tbucks}
                 setCbucks={setTbucks}
