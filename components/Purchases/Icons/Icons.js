@@ -15,7 +15,7 @@ export default function Icons(props) {
         <aside>
             <button className="store" onClick={handleShopClick} style={colors.theme.icons}>
                 <Image 
-                    src="/shopping-cart.png"
+                    src={colors.theme.images.shop}
                     width={30}
                     height={30}
                 />

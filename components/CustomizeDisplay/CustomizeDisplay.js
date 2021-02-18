@@ -54,8 +54,14 @@ export default function CustomizeDisplay(props) {
             className={
                 props.display ? CustomizeDisplayStyles.sectionActive : CustomizeDisplayStyles.sectionInactive
             }
+            style={
+                {backgroundColor: colors.theme.colors.secondary + "66"}
+            }
         >
-            <div className={CustomizeDisplayStyles.div} style={colors.theme.customizeDisplay}>
+            <div 
+                className={CustomizeDisplayStyles.div} 
+                style={colors.theme.customizeDisplay}
+            >
                 <h3 className={CustomizeDisplayStyles.title}>Welcome to the Customizer</h3><br/>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="type">Type</label><br />

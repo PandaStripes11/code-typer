@@ -23,16 +23,19 @@ export default function FootNav(props) {
     }
 
     return (
-        <section className={FootNavStyles.footNav}>
+        <section 
+            className={FootNavStyles.footNav} 
+            style={{background: colors.theme.shop.footNavStyles.background}
+        }>
             <button
                 className={`${FootNavStyles.button} ${FootNavStyles.one}`} 
                 onClick={handleUpgradesClick}
-                style={upgradeStyles, colors.theme.shop.footNavStyles}
+                style={{...upgradeStyles, color: colors.theme.shop.footNavStyles.color}}
             >⚡ Upgrades</button>
             <button 
                 className={`${FootNavStyles.button} ${FootNavStyles.two}`}
                 onClick={handleThemesClick}
-                style={themeStyles, colors.theme.shop.footNavStyles}
+                style={{...themeStyles, color: colors.theme.shop.footNavStyles.color}}
             >🔴 Themes</button>
         </section>
     )

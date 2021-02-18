@@ -1,13 +1,22 @@
 import PageIconStyles from './PageIcon.module.css'
 import Image from 'next/image'
 
+import {colors} from '../../../../../../utils/colors'
+
 export default function PageIcon(props) {
     const handleClick = () => {
         props.setDisplayPage(props.pageToDisplay)
     }
 
     return (
-        <button className={PageIconStyles.icon} onClick={handleClick}>
+        <button 
+            className={PageIconStyles.icon} 
+            onClick={handleClick} 
+            style={{
+                background: colors.theme.colors.secondary,
+                color: colors.theme.body.textColor
+            }}
+        >
             <div>
                 <Image 
                     src={props.src}

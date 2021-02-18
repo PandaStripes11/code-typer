@@ -2,14 +2,36 @@ import ThemeIconStyles from './ThemeIcon.module.css'
 
 import Image from 'next/image'
 
+import ErrorMessage from '../../Upgrades/ErrorMessage/ErrorMessage'
+
 import {colors} from '../../../../../utils/colors'
+import { useState } from 'react'
 
 export default function ThemeIcon(props) {
+    const [errorMessage, setErrorMessage] = useState(null)
+
     const handleClick = () => {
-        if (props.tbucks < props.cost) {
+        if (props.isBought) {
+            props.setSelectedTheme(props.name)
+        } else if (props.tbucks < props.cost) {
+            setErrorMessage(
+                <ErrorMessage
+                    src="/code-typer.png"
+                    title="You Need More T-bucks"
+                    description="Type faster and you'll eventually get there"
+                />
+            )
+            setTimeout(() => {
+                setErrorMessage(null)
+            }, 3000)
             return
+        } else {
+            const boughtThemes = {...props.boughtThemes}
+            boughtThemes[props.name] = true
+            props.setBoughtThemes(boughtThemes)
+            props.setTbucks(props.tbucks - props.cost)
+            props.setSelectedTheme(props.name)
         }
-        props.setTbucks(props.tbucks - props.cost)
         colors['theme'] = props.allColors
     }
 
@@ -28,14 +50,26 @@ export default function ThemeIcon(props) {
             </ul>
             <div className={ThemeIconStyles.buttonContainer}>
                 <button className={ThemeIconStyles.button} onClick={handleClick}>
-                    {props.cost}
-                    <Image
-                        src="/code-typer.png"
-                        height={25}
-                        width={25}
-                    />
+                    {
+                        props.isBought ? (
+                            props.isSelected ? "Selected" : "Select"
+                        ) : (
+                            props.cost
+                        )
+                    }
+                    {props.isBought ?
+                        null : 
+                        (
+                            <Image
+                                src="/code-typer.png"
+                                height={25}
+                                width={25}
+                            />
+                        )
+                    }
                 </button>
             </div>
+            {errorMessage}
         </div>
     )
 }

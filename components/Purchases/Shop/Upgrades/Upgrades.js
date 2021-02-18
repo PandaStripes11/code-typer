@@ -33,7 +33,7 @@ export default function Upgrades(props) {
 
     return (
         <section className={UpgradesStyles.upgrades}>
-            <button className={UpgradesStyles.button} onClick={handleClick}>
+            <button className={UpgradesStyles.button} onClick={handleClick} style={{color: colors.theme.body.textColor}}>
                 ◀
             </button>
             {page}

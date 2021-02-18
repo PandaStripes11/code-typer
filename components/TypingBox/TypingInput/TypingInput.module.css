@@ -18,8 +18,7 @@ input[type="text"].input {
     outline: none;
     flex-shrink: 4;
     background: 
-        linear-gradient(cornflowerblue, cornflowerblue) bottom / 0% 2px no-repeat 
-        rgb(235, 235, 235);
+        linear-gradient(cornflowerblue, cornflowerblue) bottom / 0% 2px no-repeat;
     transition: background-size 1s ease-out;
 }
 input[type="text"].inputCorrect {

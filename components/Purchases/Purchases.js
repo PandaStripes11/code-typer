@@ -23,6 +23,8 @@ export default function Purchases(props) {
                 setTbucks={props.setCbucks}
                 multiplier={props.multiplier}
                 setMultiplier={props.setMultiplier}
+                selectedTheme={props.selectedTheme}
+                setSelectedTheme={props.setSelectedTheme}
             />
             <BattlePass
                 displayBattlePass={displayBattlePass}

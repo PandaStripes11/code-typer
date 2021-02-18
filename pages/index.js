@@ -11,7 +11,7 @@ import {useState, useEffect} from 'react'
 import {colors} from '../utils/colors'
 
 export default function App() {
-    const [tbucks, setTbucks] = useState(100000)
+    const [tbucks, setTbucks] = useState(100)
     const [customize, setCustomize] = useState(false)
     const [multiplier, setMultiplier] = useState(1)
     const [passageDetails, setPassageDetails] = useState({
@@ -21,6 +21,7 @@ export default function App() {
     })
     const [displayAnimation, setDisplayAnimation] = useState(false)
     const [animationValue, setAnimationValue] = useState(0)
+    const [selectedTheme, setSelectedTheme] = useState("Default")
 
     useEffect(() => {
         document.getElementsByTagName('body')[0].style.background = colors.theme.body.background
@@ -43,6 +44,8 @@ export default function App() {
                 setCbucks={setTbucks}
                 multiplier={multiplier}
                 setMultiplier={setMultiplier}
+                selectedTheme={selectedTheme}
+                setSelectedTheme={setSelectedTheme}
             />
             <h1>Type Master</h1>
             <TypingBox 

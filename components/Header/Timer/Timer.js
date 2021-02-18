@@ -33,7 +33,7 @@ export default function Timer() {
     return (
         <button className={TimerStyles.button} onClick={handleClick} style={colors.theme.header.timerStyles}>
             <Image
-                src="/clock_icon.png"
+                src={colors.theme.images.timer}
                 height={40}
                 width={40}
             />

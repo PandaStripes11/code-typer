@@ -11,9 +11,21 @@ import {useState} from 'react'
 
 import {colors} from '../../../utils/colors'
 
+import {themeColors} from '../../../utils/themeColors'
+
+const themes = {}
+for (let i = 0; i < themeColors.length; i++) {
+    if (themeColors[i].name === "Default") {
+        themes[themeColors[i].name] = true
+        continue
+    }
+    themes[themeColors[i].name] = false
+}
+
 export default function Shop(props) {
     const [currPage, setCurrPage] = useState('upgrades')
     const [boughtMultipliers, setBoughtMultipliers] = useState(new Array(MultiplierData.length).fill(false))
+    const [boughtThemes, setBoughtThemes] = useState(themes)
 
     const handleClick = () => {
         props.setDisplayShop(!props.displayShop)
@@ -30,7 +42,14 @@ export default function Shop(props) {
             setBoughtMultipliers={setBoughtMultipliers}
         />
     } else if (currPage === 'themes') {
-        page = <Themes tbucks={props.tbucks} setTbucks={props.setTbucks}/>
+        page = <Themes 
+            tbucks={props.tbucks} 
+            setTbucks={props.setTbucks}
+            boughtThemes={boughtThemes}
+            setBoughtThemes={setBoughtThemes}
+            selectedTheme={props.selectedTheme}
+            setSelectedTheme={props.setSelectedTheme}
+        />
     }
 
     return (
@@ -38,7 +57,7 @@ export default function Shop(props) {
             <div className={ShopStyles.container}>
                 <button className={ShopStyles.button} onClick={handleClick}>
                     <Image 
-                        src="/close.png"
+                        src={colors.theme.images.close}
                         height={50}
                         width={50}
                     />

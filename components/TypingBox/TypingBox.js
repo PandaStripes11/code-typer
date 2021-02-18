@@ -145,8 +145,6 @@ export default function TypingBox(props) {
                 setCurrentWord(prev => prev + 1)
                 setCorrect(true)
                 if (acc < 25) {
-                    props.setAnimationValue(-100)
-                    props.setDisplayAnimation(true)
                     if (props.cbucks < 100) {
                         props.setCbucks(0)
                     } else {
@@ -154,6 +152,8 @@ export default function TypingBox(props) {
                             props.cbucks - 100
                         )
                     }
+                    props.setAnimationValue(-100)
+                    props.setDisplayAnimation(true)
                     return
                 }
                 if (acc < 60) {
@@ -187,8 +187,6 @@ export default function TypingBox(props) {
                 })
                 setCurrentWord(prev => prev + 1)
                 if (acc < 25) {
-                    props.setAnimationValue(-100)
-                    props.setDisplayAnimation(true)
                     if (props.cbucks < 100) {
                         props.setCbucks(0)
                     } else {
@@ -196,6 +194,8 @@ export default function TypingBox(props) {
                             props.cbucks - 100
                         )
                     }
+                    props.setAnimationValue(-100)
+                    props.setDisplayAnimation(true)
                     return
                 }
                 if (acc < 60) {

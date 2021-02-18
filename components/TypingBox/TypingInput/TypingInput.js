@@ -1,4 +1,5 @@
 import {useEffect} from 'react'
+import { colors } from '../../../utils/colors'
 
 import TypingInputStyles from './TypingInput.module.css'
 
@@ -45,6 +46,9 @@ export default function TypingInput(props) {
                     id="typing-input"
                     id="typing-input"
                     autoComplete="off"
+                    style={
+                        props.correct === undefined ? colors.theme.typingInput : null 
+                    }
                 />
             </form>
             <button 

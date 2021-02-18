@@ -44,6 +44,10 @@ let colors = {
         }
     },
     theme: {
+        colors: {
+            primary: "#FFFFFF",
+            secondary: "#FFFFFF"
+        },
         body: {
             background: "#FFFFFF",
             textColor: "#000000"
@@ -60,6 +64,9 @@ let colors = {
         },
         typingBox: {
             background: "#dcdcdc"
+        },
+        typingInput: {
+            backgroundColor: "#ebebeb"
         },
         customize: {
             color: "#000000"
@@ -83,8 +90,14 @@ let colors = {
                 color: "#000000"
             },
             footNavStyles: {
-                color: "#000000"
+                background: "#FFFFFF",
+                color: "#000000",
             }
+        },
+        images: {
+            timer: "/clock_icon.png",
+            close: "/close.png",
+            shop: "/shopping-cart.png"
         }
     }
 }
