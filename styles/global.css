@@ -65,6 +65,20 @@ button {
     font-weight: 700;
 }
 
+li > ul {
+    margin-left: 15px;
+}
+li > ol {
+    margin-left: 15px;
+}
+pre {
+    margin: 10px;
+}
+code {
+    background-color: #ebebeb;
+    padding: 8px;
+}
+
 @media only screen and (max-width: 1000px) {
     html {
         font-size: 14px;
