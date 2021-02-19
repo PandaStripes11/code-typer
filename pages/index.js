@@ -6,6 +6,7 @@ import Header from '../components/Header/Header'
 import Purchases from '../components/Purchases/Purchases'
 import Animation from '../components/Animation/Animation'
 import Music from '../components/Music/Music'
+import Info from '../components/Info/Info'
 
 import {useState, useEffect} from 'react'
 
@@ -49,6 +50,7 @@ export default function App() {
                 selectedTheme={selectedTheme}
                 setSelectedTheme={setSelectedTheme}
             />
+            <Info/>
             <h1>Type Master</h1>
             <TypingBox 
                 setCustomizeDisplay={setCustomize}

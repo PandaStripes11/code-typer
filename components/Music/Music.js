@@ -31,7 +31,8 @@ export default function Music() {
             </iframe>
             <button 
                 className={MusicStyles.icon} 
-                style={{background: colors.theme.icons.background}} 
+                style={{background: colors.theme.body.background}} 
+                id="play-button"
             >
                 <Image
                     src={colors.theme.images.speaker}
