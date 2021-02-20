@@ -6,10 +6,10 @@ A new and fun way to type
 Many changes are intended to come out soon.
 This page has been built to turn typing into a game.
 
-Any feature requests or suggestions can be filled out below:   
+Any feature requests or suggestions can be filled out below:    
 [https://forms.gle/gDkzVuEwgzB1ypzu8](https://forms.gle/gDkzVuEwgzB1ypzu8)   
 
-Bugs or uninteded behavior in the website can be reported below:
+Bugs or uninteded behavior in the website can be reported below:   
 [https://forms.gle/LLWRW1jeQx9hiq61A](https://forms.gle/LLWRW1jeQx9hiq61A)
 
 ## Table of Contents ##
