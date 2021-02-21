@@ -24,6 +24,7 @@ export default function App() {
     const [displayAnimation, setDisplayAnimation] = useState(false)
     const [animationValue, setAnimationValue] = useState(0)
     const [selectedTheme, setSelectedTheme] = useState("Default")
+    const [musicUrl, setMusicUrl] = useState("https://open.spotify.com/embed/playlist/0B1K8sT1KKfS4gNI9Upstm")
 
     useEffect(() => {
         document.getElementsByTagName('body')[0].style.background = colors.theme.body.background
@@ -41,7 +42,9 @@ export default function App() {
             <Header 
                 cbucks={tbucks}
             />
-            <Music/>
+            <Music
+                musicUrl={musicUrl}
+            />
             <Purchases 
                 cbucks={tbucks}
                 setCbucks={setTbucks}
@@ -49,6 +52,8 @@ export default function App() {
                 setMultiplier={setMultiplier}
                 selectedTheme={selectedTheme}
                 setSelectedTheme={setSelectedTheme}
+                musicUrl={musicUrl}
+                setMusicUrl={setMusicUrl}
             />
             <Info/>
             <h1>Type Master</h1>

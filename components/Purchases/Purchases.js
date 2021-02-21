@@ -25,6 +25,8 @@ export default function Purchases(props) {
                 setMultiplier={props.setMultiplier}
                 selectedTheme={props.selectedTheme}
                 setSelectedTheme={props.setSelectedTheme}
+                musicUrl={props.musicUrl}
+                setMusicUrl={props.setMusicUrl}
             />
             <BattlePass
                 displayBattlePass={displayBattlePass}

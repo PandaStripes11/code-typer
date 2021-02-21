@@ -5,7 +5,7 @@ import {colors} from '../../utils/colors'
 import Image from 'next/image'
 import { useState } from 'react'
 
-export default function Music() {
+export default function Music(props) {
     const [active, setActive] = useState(false)
 
     const handleClick = () => {
@@ -16,15 +16,13 @@ export default function Music() {
         <>
             <iframe 
                 title="music"
-                src="https://open.spotify.com/embed/playlist/0B1K8sT1KKfS4gNI9Upstm" 
+                src={props.musicUrl}
                 width="80" 
                 height="80" 
                 frameBorder="0" 
                 allowtransparency="true" 
                 allow="encrypted-media" 
                 className={MusicStyles.music}
-                autostart="true"
-                autoPlay
                 id="music"
                 onClick={handleClick}
             >

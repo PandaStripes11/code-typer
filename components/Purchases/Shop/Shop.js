@@ -3,6 +3,7 @@ import ShopStyles from './Shop.module.css'
 import Upgrades from './Upgrades/Upgrades'
 import Themes from './Themes/Themes'
 import FootNav from './FootNav/FootNav'
+import Music from './Music/Music'
 
 import Image from 'next/image'
 
@@ -13,6 +14,8 @@ import {colors} from '../../../utils/colors'
 
 import {themeColors} from '../../../utils/themeColors'
 
+import {music} from '../../../utils/music'
+
 const themes = {}
 for (let i = 0; i < themeColors.length; i++) {
     if (themeColors[i].name === "Default") {
@@ -22,10 +25,20 @@ for (let i = 0; i < themeColors.length; i++) {
     themes[themeColors[i].name] = false
 }
 
+const musicUrls = {}
+for (let i = 0; i < music.length; i++) {
+    if (music[i].name === "Default") {
+        musicUrls[music[i].url] = true
+        continue
+    }
+    musicUrls[music[i].url] = false
+}
+
 export default function Shop(props) {
     const [currPage, setCurrPage] = useState('upgrades')
     const [boughtMultipliers, setBoughtMultipliers] = useState(new Array(MultiplierData.length).fill(false))
     const [boughtThemes, setBoughtThemes] = useState(themes)
+    const [boughtMusic, setBoughtMusic] = useState(musicUrls)
 
     const handleClick = () => {
         props.setDisplayShop(!props.displayShop)
@@ -49,6 +62,15 @@ export default function Shop(props) {
             setBoughtThemes={setBoughtThemes}
             selectedTheme={props.selectedTheme}
             setSelectedTheme={props.setSelectedTheme}
+        />
+    } else if (currPage === 'music') {
+        page = <Music
+            tbucks={props.tbucks}
+            setTbucks={props.setTbucks}
+            musicUrl={props.musicUrl}
+            setMusicUrl={props.setMusicUrl}
+            boughtMusic={boughtMusic}
+            setBoughtMusic={setBoughtMusic}
         />
     }
 
