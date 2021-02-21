@@ -9,6 +9,8 @@ import Music from '../components/Music/Music'
 import Info from '../components/Info/Info'
 
 import {useState, useEffect} from 'react'
+import Cookies from 'universal-cookie'
+const cookies = new Cookies()
 
 import {colors} from '../utils/colors'
 
@@ -27,9 +29,21 @@ export default function App() {
     const [musicUrl, setMusicUrl] = useState("https://open.spotify.com/embed/playlist/0B1K8sT1KKfS4gNI9Upstm")
 
     useEffect(() => {
+        console.log(cookies.get("tbucks"))
+        if (cookies.get("tbucks")) {
+            setTbucks(parseInt(cookies.get('tbucks')))
+        } else {
+            cookies.set("tbucks", tbucks, {path: "/"})
+            setTbucks(parseInt(cookies.get('tbucks')))
+        }
+    }, [])
+    useEffect(() => {
         document.getElementsByTagName('body')[0].style.background = colors.theme.body.background
         document.getElementsByTagName('body')[0].style.color = colors.theme.body.textColor
     })
+    useEffect(() => {
+        cookies.set('tbucks', tbucks, {path: "/"})
+    }, [tbucks])
 
     return (
         <>
