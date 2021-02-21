@@ -29,19 +29,11 @@ This website has been developed primarily using Next.js and React.
 It is a single page application with Next.js used for server side rendering.
 The website is hosted using Vercel.
 
-## Version - v1.0.0 
+## Version - v1.1.0 
 Information about the versions and releases of this project can be found here.
 ### **Release Notes** ###
-This is the first release of Typing Master.
+This update includes a new purchasable item in the shop, music
 ### **Features** ###
-*   Shop
-    * Multipliers
-    * Themes
-* Currency
-* Custom Passage Options
-* Random Passage Generation
-* Music
-* Timer
-### **Bug Fixes** ###
-* **WPM Display**: Did not stop when reaching end of passage
+*   **Music Purchases** - a new item in the shop to change the music you can listen to
+
 
