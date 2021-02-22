@@ -7,6 +7,7 @@ import Purchases from '../components/Purchases/Purchases'
 import Animation from '../components/Animation/Animation'
 import Music from '../components/Music/Music'
 import Info from '../components/Info/Info'
+import Cookie from '../components/Cookie/Cookie'
 
 import {useState, useEffect} from 'react'
 import Cookies from 'universal-cookie'
@@ -29,7 +30,6 @@ export default function App() {
     const [musicUrl, setMusicUrl] = useState("https://open.spotify.com/embed/playlist/0B1K8sT1KKfS4gNI9Upstm")
 
     useEffect(() => {
-        console.log(cookies.get("tbucks"))
         if (cookies.get("tbucks")) {
             setTbucks(parseInt(cookies.get('tbucks')))
         } else {
@@ -70,6 +70,7 @@ export default function App() {
                 setMusicUrl={setMusicUrl}
             />
             <Info/>
+            <Cookie/>
             <h1>Type Master</h1>
             <TypingBox 
                 setCustomizeDisplay={setCustomize}

@@ -8,13 +8,16 @@ import Music from './Music/Music'
 import Image from 'next/image'
 
 import {MultiplierData} from '../../../utils/multiplierData'
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 
 import {colors} from '../../../utils/colors'
 
 import {themeColors} from '../../../utils/themeColors'
 
 import {music} from '../../../utils/music'
+
+import Cookies from 'universal-cookie'
+const cookies = new Cookies()
 
 const themes = {}
 for (let i = 0; i < themeColors.length; i++) {
@@ -39,6 +42,30 @@ export default function Shop(props) {
     const [boughtMultipliers, setBoughtMultipliers] = useState(new Array(MultiplierData.length).fill(false))
     const [boughtThemes, setBoughtThemes] = useState(themes)
     const [boughtMusic, setBoughtMusic] = useState(musicUrls)
+
+    useEffect(() => {
+        cookies.get("boughtMultipliers") ? 
+            setBoughtMultipliers(cookies.get('boughtMultipliers')) :
+            cookies.set("boughtMultipliers", boughtMultipliers, {path: "/"})
+            setBoughtMultipliers(cookies.get('boughtMultipliers'))
+        cookies.get("boughtThemes") ? 
+            setBoughtThemes(cookies.get('boughtThemes')) :
+            cookies.set("boughtThemes", boughtThemes, {path: "/"})
+            setBoughtThemes(cookies.get('boughtThemes'))
+        cookies.get("boughtMusic") ? 
+            setBoughtMusic(cookies.get('boughtMusic')) :
+            cookies.set("boughtMusic", boughtThemes, {path: "/"})
+            setBoughtMusic(cookies.get('boughtMusic'))
+    }, [])
+    useEffect(() => {
+        cookies.set('boughtMultipliers', boughtMultipliers, {path: "/"})
+    }, [boughtMultipliers])
+    useEffect(() => {
+        cookies.set('boughtThemes', boughtThemes, {path: "/"})
+    }, [boughtThemes])
+    useEffect(() => {
+        cookies.set('boughtMusic', boughtMusic, {path: "/"})
+    }, [boughtMusic])
 
     const handleClick = () => {
         props.setDisplayShop(!props.displayShop)
