@@ -1,4 +1,5 @@
 import CookieStyles from './Cookie.module.css'
+import {colors} from '../../utils/colors'
 
 import Image from 'next/image'
 
@@ -17,7 +18,7 @@ export default function Cookie() {
 
     return (
         <>
-            <button className={CookieStyles.button} onClick={handleIconClick}>
+            <button className={CookieStyles.button} onClick={handleIconClick} style={colors.theme.icons}>
                 <Image
                     src="/cookie.png"
                     height={25}
