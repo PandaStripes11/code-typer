@@ -54,7 +54,7 @@ export default function Shop(props) {
             setBoughtThemes(cookies.get('boughtThemes'))
         cookies.get("boughtMusic") ? 
             setBoughtMusic(cookies.get('boughtMusic')) :
-            cookies.set("boughtMusic", boughtThemes, {path: "/"})
+            cookies.set("boughtMusic", boughtMusic, {path: "/"})
             setBoughtMusic(cookies.get('boughtMusic'))
     }, [])
     useEffect(() => {

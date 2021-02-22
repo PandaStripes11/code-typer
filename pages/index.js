@@ -16,7 +16,7 @@ const cookies = new Cookies()
 import {colors} from '../utils/colors'
 
 export default function App() {
-    const [tbucks, setTbucks] = useState(100)
+    const [tbucks, setTbucks] = useState(1000)
     const [customize, setCustomize] = useState(false)
     const [multiplier, setMultiplier] = useState(1)
     const [passageDetails, setPassageDetails] = useState({

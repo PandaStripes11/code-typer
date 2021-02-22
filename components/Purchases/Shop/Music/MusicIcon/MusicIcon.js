@@ -33,6 +33,7 @@ export default function MusicIcon(props) {
     }
 
     return (
+        <>
         <div className={MusicIconStyles.icon}>
             <h2>{props.name}</h2>
             <ul className={MusicIconStyles.list}>
@@ -65,5 +66,7 @@ export default function MusicIcon(props) {
                 </button>
             </div>
         </div>
+        {errorMessage}
+        </>
     )
 }
