@@ -1,6 +1,6 @@
 .button {
     position: fixed;
-    bottom: 10%;
+    bottom: calc(3% + 50px);
     display: flex;
     align-items: center;
     left: 1%;
