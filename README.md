@@ -29,11 +29,20 @@ This website has been developed primarily using Next.js and React.
 It is a single page application with Next.js used for server side rendering.
 The website is hosted using Vercel.
 
-## Version - v1.1.0 
-Information about the versions and releases of this project can be found here.
-### **Release Notes** ###
-This update includes a new purchasable item in the shop, music
-### **Features** ###
-*   **Music Purchases** - a new item in the shop to change the music you can listen to
+## Version - v1.2.0 (Data Saving with Cookies)
+This new update introduces data saving with cookies so that when the user leaves, their currency and items are saved for the next time they come back.
+
+### Release Notes
+A new dependency was added, universal-cookies, in order to use cookie data with react.
+
+### Features
+* **Data Saving** - currency and items are saved until the user comes back
+    * T-bucks, upgrades, and music purchases are saved
+    * Settings are not saved so themes and music will return to their defaults
+* **Remove Cookies** - users have the option to remove the cookies stored to reset their progress
+
+### Bug Fixes
+* **Default music** - fixed bug where default music would not be auto selected
+* **Cookie icon theme** - fixed bug where theme would not change cookies icon
 
 
