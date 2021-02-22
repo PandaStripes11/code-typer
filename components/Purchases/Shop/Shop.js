@@ -46,25 +46,25 @@ export default function Shop(props) {
     useEffect(() => {
         cookies.get("boughtMultipliers") ? 
             setBoughtMultipliers(cookies.get('boughtMultipliers')) :
-            cookies.set("boughtMultipliers", boughtMultipliers, {path: "/"})
+            cookies.set("boughtMultipliers", boughtMultipliers, {path: "/", maxAge: 604800})
             setBoughtMultipliers(cookies.get('boughtMultipliers'))
         cookies.get("boughtThemes") ? 
             setBoughtThemes(cookies.get('boughtThemes')) :
-            cookies.set("boughtThemes", boughtThemes, {path: "/"})
+            cookies.set("boughtThemes", boughtThemes, {path: "/", maxAge: 604800})
             setBoughtThemes(cookies.get('boughtThemes'))
         cookies.get("boughtMusic") ? 
             setBoughtMusic(cookies.get('boughtMusic')) :
-            cookies.set("boughtMusic", boughtMusic, {path: "/"})
+            cookies.set("boughtMusic", boughtMusic, {path: "/", maxAge: 604800})
             setBoughtMusic(cookies.get('boughtMusic'))
     }, [])
     useEffect(() => {
-        cookies.set('boughtMultipliers', boughtMultipliers, {path: "/"})
+        cookies.set('boughtMultipliers', boughtMultipliers, {path: "/", maxAge: 604800})
     }, [boughtMultipliers])
     useEffect(() => {
-        cookies.set('boughtThemes', boughtThemes, {path: "/"})
+        cookies.set('boughtThemes', boughtThemes, {path: "/", maxAge: 604800})
     }, [boughtThemes])
     useEffect(() => {
-        cookies.set('boughtMusic', boughtMusic, {path: "/"})
+        cookies.set('boughtMusic', boughtMusic, {path: "/", maxAge: 604800})
     }, [boughtMusic])
 
     const handleClick = () => {

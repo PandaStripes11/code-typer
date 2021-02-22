@@ -33,7 +33,7 @@ export default function App() {
         if (cookies.get("tbucks")) {
             setTbucks(parseInt(cookies.get('tbucks')))
         } else {
-            cookies.set("tbucks", tbucks, {path: "/"})
+            cookies.set("tbucks", tbucks, {path: "/", maxAge: 604800})
             setTbucks(parseInt(cookies.get('tbucks')))
         }
     }, [])
@@ -42,7 +42,7 @@ export default function App() {
         document.getElementsByTagName('body')[0].style.color = colors.theme.body.textColor
     })
     useEffect(() => {
-        cookies.set('tbucks', tbucks, {path: "/"})
+        cookies.set('tbucks', tbucks, {path: "/", maxAge: 604800})
     }, [tbucks])
 
     return (
