@@ -45,8 +45,11 @@ export default function CustomizeDisplay(props) {
     }
 
     let maxValue = 1000
+    let minValue = 1
     if (props.passageDetails.type === 'paragraphs') {
         maxValue = 100
+    } else if (props.passageDetails.type === 'words') {
+        minValue = 10
     }
 
     return (
@@ -71,7 +74,7 @@ export default function CustomizeDisplay(props) {
                         <option value="paragraphs">Paragraphs</option>
                     </select><br /><br />
                     <label htmlFor="number">Number of {props.passageDetails.type}</label><br/>
-                    <input id="number" type="number" min="2" max={maxValue} name="number" value={props.passageDetails.number} onChange={handleChange}/><br /><br />
+                    <input id="number" type="number" min={minValue} max={maxValue} name="number" value={props.passageDetails.number} onChange={handleChange}/><br /><br />
                     <h4>Symbols</h4>
                     <input type="checkbox" id="quotes" name="quotes" value='""' onChange={handleChange}/>
                     <label htmlFor="quotes"> Quotes ""</label><br/>
