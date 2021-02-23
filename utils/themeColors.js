@@ -64,6 +64,70 @@ const themeColors = [
         }
     },
     {
+        name: "Blue",
+        cost: 500,
+        displayColors: ["#2874A6", "#2E86C1", "#3498DB", "#5DADE2"],
+        colors: {
+            colors: {
+                primary: "#2E86C1",
+                secondary: "#5DADE2"
+            },
+            body: {
+                background: "#2874A6",
+                textColor: "#000000"
+            },
+            header: {
+                headerStyles: {
+                    background: "#5DADE2",
+                    color: "#000000"
+                },
+                timerStyles: {
+                    background: "#5DADE2",
+                    color: "#000000"
+                } 
+            },
+            typingBox: {
+                background: "#85C1E9"
+            },
+            typingInput: {
+                backgroundColor: "#EEEEEE"
+            },
+            customize: {
+                color: "#000000"
+            },
+            credits: {
+                background: "#85C1E9"
+            },
+            customizeDisplay: {
+                background: "#5DADE2"
+            },
+            icons: {
+                background: "#5DADE2",
+                color: "#000000"
+            },
+            battlePass: {
+                background: "#5DADE2"
+            },
+            shop: {
+                shopStyles: {
+                    background: "#2874A6",
+                    color: "#EEEEEE"
+                },
+                footNavStyles: {
+                    color: "#EEEEEE", 
+                    background: "#21618C"
+                }
+            },
+            images: {
+                timer: "/clock_icon.png",
+                close: "/light_close.png",
+                shop: "/shopping-cart.png",
+                noSpeaker: "/light_no_speaker.png",
+                speaker: "/light_speaker.png"
+            }
+        }  
+    },
+    {
         name: "Dark",
         cost: 1000,
         displayColors: ["#222222", "#454545", "#566573", "#ABB2B9"],
@@ -254,6 +318,6 @@ const themeColors = [
                 speaker: "/speaker.png"
             }
         }  
-    }
+    },
 ]
 export {themeColors}
