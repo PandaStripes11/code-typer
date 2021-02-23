@@ -58,6 +58,15 @@ export default function Shop(props) {
             setBoughtMusic(cookies.get('boughtMusic'))
     }, [])
     useEffect(() => {
+        console.log(boughtMultipliers)
+        for (let i = 0; i < boughtMultipliers.length; i++) {
+            if (i === 0 && boughtMultipliers[i] === false) {
+                break
+            } else if ((i > 0 && boughtMultipliers[i] === false) || i === boughtMultipliers.length - 1) {
+                props.setMultiplier(MultiplierData[i - 1].multiplier)
+                break
+            }
+        }
         cookies.set('boughtMultipliers', boughtMultipliers, {path: "/", maxAge: 604800})
     }, [boughtMultipliers])
     useEffect(() => {
