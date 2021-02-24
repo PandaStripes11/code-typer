@@ -63,6 +63,10 @@ export default function Shop(props) {
             if (i === 0 && boughtMultipliers[i] === false) {
                 break
             } else if ((i > 0 && boughtMultipliers[i] === false) || i === boughtMultipliers.length - 1) {
+                if (i === boughtMultipliers.length - 1) {
+                    props.setMultiplier(MultiplierData[i].multiplier)
+                    break
+                }
                 props.setMultiplier(MultiplierData[i - 1].multiplier)
                 break
             }
