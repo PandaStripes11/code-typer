@@ -50,6 +50,10 @@ export default function Shop(props) {
             setBoughtMultipliers(cookies.get('boughtMultipliers')) :
             cookies.set("boughtMultipliers", boughtMultipliers, {path: "/", maxAge: 604800})
             setBoughtMultipliers(cookies.get('boughtMultipliers'))
+        cookies.get("boughtWpmBonuses") ? 
+            setBoughtWpmBonuses(cookies.get('boughtWpmBonuses')) :
+            cookies.set("boughtWpmBonuses", boughtWpmBonuses, {path: "/", maxAge: 604800})
+            setBoughtWpmBonuses(cookies.get('boughtWpmBonuses'))
         cookies.get("boughtThemes") ? 
             setBoughtThemes(cookies.get('boughtThemes')) :
             cookies.set("boughtThemes", boughtThemes, {path: "/", maxAge: 604800})
@@ -60,7 +64,6 @@ export default function Shop(props) {
             setBoughtMusic(cookies.get('boughtMusic'))
     }, [])
     useEffect(() => {
-        console.log(boughtMultipliers)
         for (let i = 0; i < boughtMultipliers.length; i++) {
             if (i === 0 && boughtMultipliers[i] === false) {
                 break
@@ -76,14 +79,26 @@ export default function Shop(props) {
         cookies.set('boughtMultipliers', boughtMultipliers, {path: "/", maxAge: 604800})
     }, [boughtMultipliers])
     useEffect(() => {
+        for (let i = 0; i < boughtWpmBonuses.length; i++) {
+            if (i === 0 && boughtWpmBonuses[i] === false) {
+                break
+            } else if ((i > 0 && boughtWpmBonuses[i] === false) || i === boughtWpmBonuses.length - 1) {
+                if (i === boughtWpmBonuses.length - 1) {
+                    props.setWpmBonus(wpmBonusesData[i].bonus)
+                    break
+                }
+                props.setWpmBonus(wpmBonusesData[i - 1].bonus)
+                break
+            }
+        }
+        cookies.set('boughtWpmBonuses', boughtWpmBonuses, {path: "/", maxAge: 604800})
+    }, [boughtWpmBonuses])
+    useEffect(() => {
         cookies.set('boughtThemes', boughtThemes, {path: "/", maxAge: 604800})
     }, [boughtThemes])
     useEffect(() => {
         cookies.set('boughtMusic', boughtMusic, {path: "/", maxAge: 604800})
     }, [boughtMusic])
-    useEffect(() => {
-        console.log(boughtWpmBonuses)
-    }, [boughtWpmBonuses])
 
     const handleClick = () => {
         props.setDisplayShop(!props.displayShop)

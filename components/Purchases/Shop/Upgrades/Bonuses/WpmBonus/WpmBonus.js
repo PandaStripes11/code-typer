@@ -10,8 +10,7 @@ import Image from 'next/image'
 export default function WpmBonuses(props) {
     const [levelWpmBonus, setLevelWpmBonus] = useState(0)
     const [errorMessage, setErrorMessage] = useState(null)
-    const [updater, setUpdater] = useState(0)
-
+    console.log(props)
     const handleButtonClick = () => {
         if (props.boughtWpmBonuses[levelWpmBonus]) {
             return
@@ -26,23 +25,19 @@ export default function WpmBonuses(props) {
             }, 3000)
             return
         } else {
-            props.setBoughtWpmBonuses(prev => {
-                const copyOfBoughtWpmBonuses = props.boughtWpmBonuses
-                return copyOfBoughtWpmBonuses.map((elem, index) => {
+            const copyOfBoughtWpmBonuses = props.boughtWpmBonuses
+            const newBoughtWpmBonuses = copyOfBoughtWpmBonuses.map((elem, index) => {
                     if (index <= levelWpmBonus) {
                         return true
                     } else {
                         return elem
                     }
                 })
-            })
+            props.setBoughtWpmBonuses(newBoughtWpmBonuses)
             props.setTbucks(prev => {
                 return prev - wpmBonusesData[levelWpmBonus].cost
             })
             props.setWpmBonus(wpmBonusesData[levelWpmBonus].bonus)
-            setTimeout(() => {
-                setUpdater(prev => prev + 1)
-            }, 200)
         }
     }
     const handleListClick = (e) => {
@@ -64,7 +59,6 @@ export default function WpmBonuses(props) {
             setLevelWpmBonus(prev => prev + 1)
         }
     }
-    console.log("called")
     return (
         <div className={WpmBonusStyles.div}>
             <button 
@@ -99,7 +93,7 @@ export default function WpmBonuses(props) {
                                 <li 
                                     className={`${WpmBonusStyles.green} ${WpmBonusStyles.active}`} 
                                     onClick={handleListClick}
-                                    key={elem.bonus}
+                                    key={elem.bonus + Math.floor(Math.random() * 1000)}
                                 >
                                     {index + 1}
                                 </li>
@@ -109,7 +103,7 @@ export default function WpmBonuses(props) {
                                 <li 
                                     className={`${WpmBonusStyles.red} ${WpmBonusStyles.active}`} 
                                     onClick={handleListClick}
-                                    key={elem.bonus}
+                                    key={elem.bonus + Math.floor(Math.random() * 1000)}
                                 >
                                     {index + 1}
                                 </li>
@@ -117,9 +111,9 @@ export default function WpmBonuses(props) {
                         }
                     }
                     if (props.boughtWpmBonuses[index]) {
-                        return <li className={WpmBonusStyles.green} onClick={handleListClick} key={elem.WpmBonuses}>{index + 1}</li>
+                        return <li className={WpmBonusStyles.green} onClick={handleListClick} key={elem.bonus + Math.floor(Math.random() * 1000)}>{index + 1}</li>
                     } else {
-                        return <li className={WpmBonusStyles.red} onClick={handleListClick} key={elem.WpmBonuses}>{index + 1}</li>
+                        return <li className={WpmBonusStyles.red} onClick={handleListClick} key={elem.bonus + Math.floor(Math.random() * 1000)}>{index + 1}</li>
                     }
                 })}
                 <li className={WpmBonusStyles.arrows} onClick={handleRightArrowClick} key="right-arrow">▶</li>

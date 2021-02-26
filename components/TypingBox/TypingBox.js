@@ -161,12 +161,12 @@ export default function TypingBox(props) {
                     props.setDisplayAnimation(true)
                     return
                 }
-                const cbucks = Math.round(Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15) * props.multiplier)
+                const cbucks = Math.round(Math.round(Math.round(((parseFloat(wpm) + props.wpmBonus) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15) * props.multiplier)
                 props.setAnimationValue(cbucks)
                 props.setDisplayAnimation(true)
                 setTimeout(() => {
                     props.setCbucks(
-                        props.cbucks + Math.round(Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15) * props.multiplier)
+                        props.cbucks + Math.round(Math.round(Math.round(((parseFloat(wpm) + props.wpmBonus) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15) * props.multiplier)
                     )
                 }, 2000)
                 
@@ -203,12 +203,12 @@ export default function TypingBox(props) {
                     props.setDisplayAnimation(true)
                     return
                 }
-                const cbucks = Math.round(Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15) * props.multiplier)
+                const cbucks = Math.round(Math.round(Math.round(((parseFloat(wpm) + props.wpmBonus) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15) * props.multiplier)
                 props.setAnimationValue(cbucks)
                 props.setDisplayAnimation(true)
                 setTimeout(() => {
                     props.setCbucks(
-                        props.cbucks + Math.round(Math.round(Math.round((parseFloat(wpm) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15) * props.multiplier)
+                        props.cbucks + Math.round(Math.round(Math.round(((parseFloat(wpm) + props.wpmBonus) * (acc / 25 + 1)) * (words.length / 25) * (props.passageDetails.symbols.length / 2 + 1)) / 15) * props.multiplier)
                     )
                 }, 2000)
                 setCorrect(false)

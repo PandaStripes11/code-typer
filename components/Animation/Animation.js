@@ -29,6 +29,11 @@ export default function Animation(props) {
                         x&nbsp;{props.multiplier}
                     </h2> : null
                 }
+                {props.wpmBonus > 0 ?
+                    <h2 className={AnimationStyles.circles} style={{backgroundColor: 'gold', paddingRight: "12px"}}>
+                        +&nbsp;{props.wpmBonus}&nbsp;w p m
+                    </h2> : null
+                }
             </div> : null
     )
 }

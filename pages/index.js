@@ -43,10 +43,8 @@ export default function App() {
         document.getElementsByTagName('body')[0].style.color = colors.theme.body.textColor
     })
     useEffect(() => {
-        console.log(wpmBonus)
         cookies.set('tbucks', tbucks, {path: "/", maxAge: 604800})
     }, [tbucks])
-
     return (
         <>
             <Head>
@@ -85,12 +83,14 @@ export default function App() {
                 multiplier={multiplier}
                 animationValue={animationValue}
                 setAnimationValue={setAnimationValue}
+                wpmBonus={wpmBonus}
             />
             <Animation 
                 displayAnimation={displayAnimation}
                 setDisplayAnimation={setDisplayAnimation}
                 multiplier={multiplier}
                 value={animationValue}
+                wpmBonus={wpmBonus}
             />
             <CustomizeDisplay
                 display={customize} 

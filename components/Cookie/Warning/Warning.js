@@ -9,10 +9,11 @@ const cookies = new Cookies()
 
 export default function Warning(props) {
     const handleRemoveClick = () => {
-        cookies.remove('tbucks')
-        cookies.remove('boughtMultipliers')
-        cookies.remove('boughtThemes')
-        cookies.remove('boughtMusic')
+        document.cookie.split(";").forEach((c) => {
+            document.cookie = c
+              .replace(/^ +/, "")
+              .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+        });
         props.setDisplayWarning(null)
     }
     const handleCloseClick = () => {
