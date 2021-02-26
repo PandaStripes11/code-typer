@@ -29,7 +29,7 @@ export default function Music(props) {
             </iframe>
             <button 
                 className={MusicStyles.icon} 
-                style={{background: colors.theme.body.background}} 
+                style={{background: colors.theme.colors.primary}} 
                 id="play-button"
             >
                 <Image

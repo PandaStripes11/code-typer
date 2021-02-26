@@ -69,7 +69,7 @@ const themeColors = [
         displayColors: ["#2874A6", "#2E86C1", "#3498DB", "#5DADE2"],
         colors: {
             colors: {
-                primary: "#2E86C1",
+                primary: "#2874A6",
                 secondary: "#5DADE2"
             },
             body: {
@@ -265,7 +265,7 @@ const themeColors = [
                 secondary: "#FFFFFF"
             },
             body: {
-                background: "#FFFFFF",
+                background: "url('https://cdn.discordapp.com/attachments/768855517648912406/814264563754860594/Sedge_Theme_Image.png') no-repeat top center / cover",
                 textColor: "#000000"
             },
             header: {

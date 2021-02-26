@@ -8,6 +8,7 @@ import Music from './Music/Music'
 import Image from 'next/image'
 
 import {MultiplierData} from '../../../utils/multiplierData'
+import {wpmBonusesData} from '../../../utils/wpmBonusesData'
 import {useEffect, useState} from 'react'
 
 import {colors} from '../../../utils/colors'
@@ -40,6 +41,7 @@ for (let i = 0; i < music.length; i++) {
 export default function Shop(props) {
     const [currPage, setCurrPage] = useState('upgrades')
     const [boughtMultipliers, setBoughtMultipliers] = useState(new Array(MultiplierData.length).fill(false))
+    const [boughtWpmBonuses, setBoughtWpmBonuses] = useState(new Array(wpmBonusesData.length).fill(false))
     const [boughtThemes, setBoughtThemes] = useState(themes)
     const [boughtMusic, setBoughtMusic] = useState(musicUrls)
 
@@ -79,6 +81,9 @@ export default function Shop(props) {
     useEffect(() => {
         cookies.set('boughtMusic', boughtMusic, {path: "/", maxAge: 604800})
     }, [boughtMusic])
+    useEffect(() => {
+        console.log(boughtWpmBonuses)
+    }, [boughtWpmBonuses])
 
     const handleClick = () => {
         props.setDisplayShop(!props.displayShop)
@@ -93,6 +98,10 @@ export default function Shop(props) {
             setMultiplier={props.setMultiplier}
             boughtMultipliers={boughtMultipliers}
             setBoughtMultipliers={setBoughtMultipliers}
+            boughtWpmBonuses={boughtWpmBonuses}
+            setBoughtWpmBonuses={setBoughtWpmBonuses}
+            wpmBonus={props.wpmBonus}
+            setWpmBonus={props.setWpmBonus}
         />
     } else if (currPage === 'themes') {
         page = <Themes 

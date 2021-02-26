@@ -19,6 +19,7 @@ export default function App() {
     const [tbucks, setTbucks] = useState(1000)
     const [customize, setCustomize] = useState(false)
     const [multiplier, setMultiplier] = useState(1)
+    const [wpmBonus, setWpmBonus] = useState(0)
     const [passageDetails, setPassageDetails] = useState({
         type: 'words',
         symbols: [],
@@ -42,6 +43,7 @@ export default function App() {
         document.getElementsByTagName('body')[0].style.color = colors.theme.body.textColor
     })
     useEffect(() => {
+        console.log(wpmBonus)
         cookies.set('tbucks', tbucks, {path: "/", maxAge: 604800})
     }, [tbucks])
 
@@ -68,6 +70,8 @@ export default function App() {
                 setSelectedTheme={setSelectedTheme}
                 musicUrl={musicUrl}
                 setMusicUrl={setMusicUrl}
+                wpmBonus={wpmBonus}
+                setWpmBonus={setWpmBonus}
             />
             <Info/>
             <Cookie/>

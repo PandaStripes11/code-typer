@@ -28,7 +28,14 @@ export default function Upgrades(props) {
                     setMultiplier={props.setMultiplier}
                 />
     } else if (displayPage === 'bonuses') {
-        page = <Bonuses />
+        page = <Bonuses 
+            tbucks={props.tbucks}
+            setTbucks={props.setTbucks}
+            wpmBonus={props.wpmBonus}
+            setWpmBonus={props.setWpmBonus}
+            boughtWpmBonuses={props.boughtWpmBonuses}
+            setBoughtWpmBonuses={props.setBoughtWpmBonuses}
+        />
     }
 
     return (

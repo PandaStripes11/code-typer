@@ -27,6 +27,8 @@ export default function Purchases(props) {
                 setSelectedTheme={props.setSelectedTheme}
                 musicUrl={props.musicUrl}
                 setMusicUrl={props.setMusicUrl}
+                wpmBonus={props.wpmBonus}
+                setWpmBonus={props.setWpmBonus}
             />
             <BattlePass
                 displayBattlePass={displayBattlePass}

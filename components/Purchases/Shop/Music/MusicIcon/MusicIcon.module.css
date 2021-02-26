@@ -13,6 +13,7 @@
     font-family: Poppins, sans-serif;
     transition: all 0.5s ease;
     text-align: center;
+    color: black;
 }
 .icon:hover {
     box-shadow: 3px 6px 50px 8px rgba(0, 0, 0, 0.2);

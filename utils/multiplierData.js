@@ -8,7 +8,10 @@ const MultiplierData = [
     {cost: 5000, multiplier: 10},
     {cost: 8000, multiplier: 14},
     {cost: 12000, multiplier: 20},
-    {cost: 16000, multiplier: 30}
+    {cost: 16000, multiplier: 30},
+    {cost: 30000, multiplier: 50},
+    {cost: 50000, multiplier: 75},
+    {cost: 75000, multiplier: 100}
 ]
 
 export {MultiplierData}
