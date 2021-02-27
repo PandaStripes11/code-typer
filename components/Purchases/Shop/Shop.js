@@ -9,6 +9,7 @@ import Image from 'next/image'
 
 import {MultiplierData} from '../../../utils/multiplierData'
 import {wpmBonusesData} from '../../../utils/wpmBonusesData'
+import {passiveIncomeData} from '../../../utils/passiveIncomeData'
 import {useEffect, useState} from 'react'
 
 import {colors} from '../../../utils/colors'
@@ -42,6 +43,7 @@ export default function Shop(props) {
     const [currPage, setCurrPage] = useState('upgrades')
     const [boughtMultipliers, setBoughtMultipliers] = useState(new Array(MultiplierData.length).fill(false))
     const [boughtWpmBonuses, setBoughtWpmBonuses] = useState(new Array(wpmBonusesData.length).fill(false))
+    const [boughtPassiveIncomes, setBoughtPassiveIncomes] = useState(new Array(passiveIncomeData.length).fill(false))
     const [boughtThemes, setBoughtThemes] = useState(themes)
     const [boughtMusic, setBoughtMusic] = useState(musicUrls)
 
@@ -54,6 +56,10 @@ export default function Shop(props) {
             setBoughtWpmBonuses(cookies.get('boughtWpmBonuses')) :
             cookies.set("boughtWpmBonuses", boughtWpmBonuses, {path: "/", maxAge: 604800})
             setBoughtWpmBonuses(cookies.get('boughtWpmBonuses'))
+        cookies.get("boughtPassiveIncomes") ? 
+            setBoughtPassiveIncomes(cookies.get('boughtPassiveIncomes')) :
+            cookies.set("boughtPassiveIncomes", boughtPassiveIncomes, {path: "/", maxAge: 604800})
+            setBoughtPassiveIncomes(cookies.get('boughtPassiveIncomes'))
         cookies.get("boughtThemes") ? 
             setBoughtThemes(cookies.get('boughtThemes')) :
             cookies.set("boughtThemes", boughtThemes, {path: "/", maxAge: 604800})
@@ -94,6 +100,21 @@ export default function Shop(props) {
         cookies.set('boughtWpmBonuses', boughtWpmBonuses, {path: "/", maxAge: 604800})
     }, [boughtWpmBonuses])
     useEffect(() => {
+        for (let i = 0; i < boughtPassiveIncomes.length; i++) {
+            if (i === 0 && boughtPassiveIncomes[i] === false) {
+                break
+            } else if ((i > 0 && boughtPassiveIncomes[i] === false) || i === boughtPassiveIncomes.length - 1) {
+                if (i === boughtPassiveIncomes.length - 1) {
+                    props.setPassiveIncome(passiveIncomeData[i].income)
+                    break
+                }
+                props.setPassiveIncome(passiveIncomeData[i - 1].income)
+                break
+            }
+        }
+        cookies.set('boughtPassiveIncomes', boughtPassiveIncomes, {path: "/", maxAge: 604800})
+    }, [boughtPassiveIncomes])
+    useEffect(() => {
         cookies.set('boughtThemes', boughtThemes, {path: "/", maxAge: 604800})
     }, [boughtThemes])
     useEffect(() => {
@@ -117,6 +138,10 @@ export default function Shop(props) {
             setBoughtWpmBonuses={setBoughtWpmBonuses}
             wpmBonus={props.wpmBonus}
             setWpmBonus={props.setWpmBonus}
+            passiveIncome={props.passiveIncome}
+            setPassiveIncome={props.setPassiveIncome}
+            boughtPassiveIncomes={boughtPassiveIncomes}
+            setBoughtPassiveIncomes={setBoughtPassiveIncomes}
         />
     } else if (currPage === 'themes') {
         page = <Themes 

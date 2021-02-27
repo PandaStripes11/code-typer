@@ -29,6 +29,8 @@ export default function App() {
     const [animationValue, setAnimationValue] = useState(0)
     const [selectedTheme, setSelectedTheme] = useState("Default")
     const [musicUrl, setMusicUrl] = useState("https://open.spotify.com/embed/playlist/0B1K8sT1KKfS4gNI9Upstm")
+    const [passiveIncome, setPassiveIncome] = useState(0)
+    const [incomeIntervalId, setIncomeIntervalId] = useState()
 
     useEffect(() => {
         if (cookies.get("tbucks")) {
@@ -45,6 +47,13 @@ export default function App() {
     useEffect(() => {
         cookies.set('tbucks', tbucks, {path: "/", maxAge: 604800})
     }, [tbucks])
+    useEffect(() => {
+        clearInterval(incomeIntervalId)
+        const currIntervalId = setInterval(() => {
+            setTbucks(prev => prev + passiveIncome)
+        }, 5000)
+        setIncomeIntervalId(currIntervalId)
+    }, [passiveIncome])
     return (
         <>
             <Head>
@@ -70,6 +79,8 @@ export default function App() {
                 setMusicUrl={setMusicUrl}
                 wpmBonus={wpmBonus}
                 setWpmBonus={setWpmBonus}
+                passiveIncome={passiveIncome}
+                setPassiveIncome={setPassiveIncome}
             />
             <Info/>
             <Cookie/>

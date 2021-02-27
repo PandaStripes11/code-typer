@@ -5,6 +5,7 @@ import {colors} from '../../../../utils/colors'
 import Multipliers from './Multipliers/Multipliers'
 import Menu from './Menu/Menu'
 import Bonuses from './Bonuses/Bonuses'
+import PassiveIncome from './PassiveIncome/PassiveIncome'
 
 import { useState } from 'react'
 
@@ -35,6 +36,15 @@ export default function Upgrades(props) {
             setWpmBonus={props.setWpmBonus}
             boughtWpmBonuses={props.boughtWpmBonuses}
             setBoughtWpmBonuses={props.setBoughtWpmBonuses}
+        />
+    } else if (displayPage === 'passiveIncome') {
+        page = <PassiveIncome
+            tbucks={props.tbucks}
+            setTbucks={props.setTbucks}
+            passiveIncome={props.passiveIncome}
+            setPassiveIncome={props.setPassiveIncome}
+            boughtPassiveIncomes={props.boughtPassiveIncomes}
+            setBoughtPassiveIncomes={props.setBoughtPassiveIncomes}
         />
     }
 

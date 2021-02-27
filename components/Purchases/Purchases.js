@@ -29,6 +29,8 @@ export default function Purchases(props) {
                 setMusicUrl={props.setMusicUrl}
                 wpmBonus={props.wpmBonus}
                 setWpmBonus={props.setWpmBonus}
+                passiveIncome={props.passiveIncome}
+                setPassiveIncome={props.setPassiveIncome}
             />
             <BattlePass
                 displayBattlePass={displayBattlePass}
