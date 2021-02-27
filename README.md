@@ -29,20 +29,19 @@ This website has been developed primarily using Next.js and React.
 It is a single page application with Next.js used for server side rendering.
 The website is hosted using Vercel.
 
-## Version - v1.2.0 (Data Saving with Cookies)
-This new update introduces data saving with cookies so that when the user leaves, their currency and items are saved for the next time they come back.
+## Version - v1.3.0 (Passive Income and Bonuses)
+This update introduces two new currency items in the shop, passive income and bonuses.
 
 ### Release Notes
-A new dependency was added, universal-cookies, in order to use cookie data with react.
+Passive income and bonuses have been added to boost currency.
 
 ### Features
-* **Data Saving** - currency and items are saved until the user comes back
-    * T-bucks, upgrades, and music purchases are saved
-    * Settings are not saved so themes and music will return to their defaults
-* **Remove Cookies** - users have the option to remove the cookies stored to reset their progress
+* **Passive Income** - allows users to passively gain T-bucks while idle in the tab
+* **Bonuses** - allows users to boost their wpm and acc multipliers when finishing a passage
+* **More Words** - more words have been added to the random passage generation to make them more diverse
 
 ### Bug Fixes
-* **Default music** - fixed bug where default music would not be auto selected
-* **Cookie icon theme** - fixed bug where theme would not change cookies icon
+* **Bonuses Bug** - fixed bug where bonuses would only be saved when leaving
+* **Passage Paragraphs** - fixed bug passages would not allow users to choose one paragraph
 
 
