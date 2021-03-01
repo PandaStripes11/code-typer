@@ -257,7 +257,7 @@ const themeColors = [
     },
     {
         name: "The Theme",
-        cost: 100000000,
+        cost: 10000000,
         displayColors: ["#000000", "#000000"],
         colors: {
             colors: {
