@@ -49,15 +49,15 @@ export default function Shop(props) {
 
     useEffect(() => {
         cookies.get("boughtMultipliers") ? 
-            setBoughtMultipliers(cookies.get('boughtMultipliers')) :
+            setBoughtMultipliers([cookies.get('boughtMultipliers'), ...new Array(boughtMultipliers.length - cookies.get('boughtMultipliers').length).fill(false)]) :
             cookies.set("boughtMultipliers", boughtMultipliers, {path: "/", maxAge: 604800})
             setBoughtMultipliers(cookies.get('boughtMultipliers'))
         cookies.get("boughtWpmBonuses") ? 
-            setBoughtWpmBonuses(cookies.get('boughtWpmBonuses')) :
+            setBoughtWpmBonuses([cookies.get('boughtWpmBonuses'), ...new Array(boughtWpmBonuses.length - cookies.get('boughtWpmBonuses').length).fill(false)]) :
             cookies.set("boughtWpmBonuses", boughtWpmBonuses, {path: "/", maxAge: 604800})
             setBoughtWpmBonuses(cookies.get('boughtWpmBonuses'))
         cookies.get("boughtPassiveIncomes") ? 
-            setBoughtPassiveIncomes(cookies.get('boughtPassiveIncomes')) :
+            setBoughtPassiveIncomes([cookies.get('boughtPassiveIncomes'), ...new Array(boughtPassiveIncomes.length - cookies.get('boughtPassiveIncomes').length).fill(false)]) :
             cookies.set("boughtPassiveIncomes", boughtPassiveIncomes, {path: "/", maxAge: 604800})
             setBoughtPassiveIncomes(cookies.get('boughtPassiveIncomes'))
         cookies.get("boughtThemes") ? 
@@ -70,6 +70,7 @@ export default function Shop(props) {
             setBoughtMusic(cookies.get('boughtMusic'))
     }, [])
     useEffect(() => {
+        cookies.set('boughtMultipliers', boughtMultipliers, {path: "/", maxAge: 604800})
         for (let i = 0; i < boughtMultipliers.length; i++) {
             if (i === 0 && boughtMultipliers[i] === false) {
                 break
@@ -82,9 +83,9 @@ export default function Shop(props) {
                 break
             }
         }
-        cookies.set('boughtMultipliers', boughtMultipliers, {path: "/", maxAge: 604800})
     }, [boughtMultipliers])
     useEffect(() => {
+        cookies.set('boughtWpmBonuses', boughtWpmBonuses, {path: "/", maxAge: 604800})
         for (let i = 0; i < boughtWpmBonuses.length; i++) {
             if (i === 0 && boughtWpmBonuses[i] === false) {
                 break
@@ -97,9 +98,9 @@ export default function Shop(props) {
                 break
             }
         }
-        cookies.set('boughtWpmBonuses', boughtWpmBonuses, {path: "/", maxAge: 604800})
     }, [boughtWpmBonuses])
     useEffect(() => {
+        cookies.set('boughtPassiveIncomes', boughtPassiveIncomes, {path: "/", maxAge: 604800})
         for (let i = 0; i < boughtPassiveIncomes.length; i++) {
             if (i === 0 && boughtPassiveIncomes[i] === false) {
                 break
@@ -112,7 +113,6 @@ export default function Shop(props) {
                 break
             }
         }
-        cookies.set('boughtPassiveIncomes', boughtPassiveIncomes, {path: "/", maxAge: 604800})
     }, [boughtPassiveIncomes])
     useEffect(() => {
         cookies.set('boughtThemes', boughtThemes, {path: "/", maxAge: 604800})
